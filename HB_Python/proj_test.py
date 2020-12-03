@@ -2,9 +2,9 @@ initial_choice = input("Would you rather be a rain drop or a hotdog? ").lower()
 print()
 print(f"You want to be a {initial_choice.upper()}!")
 
-first_letter = initial_choice[0]
-print(f"FIRST LETTER: {first_letter}")
 
+
+# Introductory message based on user choice
 def introduction():
     if initial_choice.startswith('r'):
         intro = f"That's awesome, I'm a {initial_choice} too!!"
@@ -12,8 +12,8 @@ def introduction():
         intro = f"You chose to be an {initial_choice}.  That's kind of wierd!  But I like wierd."
     return intro
 
-print(introduction())
 
+# Error handling
 def error():
     while True:
         if first_letter == 'r':
@@ -36,11 +36,7 @@ def error():
                 pass
 
         
-
-
-
-
-
+# Conversation with the user
 def conversation(choice):
     if choice.startswith('r'):
         print("As " + choice + "s, we just fell out of a cloud in Burnsville.")
@@ -59,12 +55,14 @@ def conversation(choice):
         if a_1.startswith('y'):
             print("> Me too!  Alright, you're driving.")
         else:
-            print("> Too bad, we gotta go.  You're driving!")
+            print(" What do you need to do in order to get ready?  Honestly, you're a hotdog. We're leaving.")
         print()
         print("Because it's 2020, we're driving in a bun-mobile.")
-        return error()
+        
 
-
+# Call the introduction function
+welcome = introduction()
+print(welcome)
         
 
 conversation(initial_choice)
