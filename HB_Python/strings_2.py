@@ -22,19 +22,55 @@
 
 # print(count_hi(letters))
 
-# letters = 'catowl'
-# cat_count = 0
-# dog_count = 0
+# letters = 'catdogcatdogg'
 
-# print(range(len(letters)))
+# def counting_animals(string):
+    
+#     for i in range(len(string)-2):
+#         animal = string[i:i+3]
+#         cat_count = 0
+#         dog_count = 0
+#         if animal == 'cat':
+#             cat_count += 1
+#         if animal == 'dog':
+#             dog_count += 1
+#     if cat_count == dog_count:
+#         return True
+#     else:
+#         return False
 
-# def cat_dog(param):
-#     cat_count = 0
-#     dog_count = 0
+# print(counting_animals(letters))
 
-#     for i in range(len(param) - 4):
-#         print(i)
+# my_string = 'aaacodebbbcodecode'
 
-# print(cat_dog(letters))
+# def codeword(letters):
+#     code_count = 0
+    
+#     for i in range(len(letters)-3):
+#         word = letters[i:i+4]
+#         if word == 'code':
+#             code_count += 1
+#     return code_count
 
-# Can't figure out where I'm going wrong on cat_dog exercise!!!!
+# code_total = codeword(my_string)
+# print(f"Total number of times CODE appears: {code_total}!")
+
+# string1 = 'hbdabc'
+# string2 = 'abc'
+
+# def ending(a, b):
+#     if b.endswith(a) or a.endswith(b):
+#         print(True)
+
+# ending(string1, string2)
+
+my_string = 'abxyzz'
+
+def search_xyz(letters):
+
+    if 'xyz' in letters:
+        for i in range(len(letters)-2):
+            print(letters[i:i+3])
+
+
+search_xyz(my_string)

@@ -1,14 +1,13 @@
-# nums = [0,0,1,1,2,3,3,3,4,6,6,6]
+my_list = [1, 1, 3, 4]
 
-# def remove_dups(numbers):
-#     singles = []
-#     for i in range(len(numbers) - 1):
-#         if numbers[i+1] == numbers[i]:
-#             singles.append(numbers[i])
-          
-#     return singles
+def no_doubles(numbers):
+    new_list = []
+    for i in range(len(numbers) - 1):
+        if numbers[i+1] != numbers[i]:
+            new_list.append(numbers[i+1])
+    return new_list
 
-# print(remove_dups(nums))
+print(no_doubles(my_list))
 
 
 
