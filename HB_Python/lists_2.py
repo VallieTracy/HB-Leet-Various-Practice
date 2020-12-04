@@ -32,21 +32,32 @@ my_list = [1, 2, 4, 5, 5, 6]
 
 # print(others)
 
-def centered_average(param):
-    others = []
-    sm = min(param)
-    lg = max(param)
+# def centered_average(param):
+#     others = []
+#     sm = min(param)
+#     lg = max(param)
 
-    for i in range(len(param)):
-        if param[i] != sm and param[i] != lg and not param[i] in others:
-            others.append(param[i])
+#     for i in range(len(param)):
+#         if param[i] != sm and param[i] != lg and not param[i] in others:
+#             others.append(param[i])
    
-    for j in range(len(others)):
-        average = sum(others) / len(others)
+#     for j in range(len(others)):
+#         average = sum(others) / len(others)
 
-    return average
+#     return average
 
-print(centered_average(my_list))
+# print(centered_average(my_list))
 
+my_list = [1, 2, 2, 1, 1, 13]
+
+def sum13(numbers):
+    if not 13 in numbers:
+        total = sum(numbers)
+    else:
+        total = 0
+        for i in range(len(numbers)):
+            total = total + numbers[i]
+    return total
+print(sum13(my_list))
 
 

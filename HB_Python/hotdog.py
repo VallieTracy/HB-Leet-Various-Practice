@@ -37,18 +37,65 @@ import random
 #     return f"We're going a total of {total_distance} miles, which will take us {time_to_store} hours!"
 
 
+# def groceries_list():
+#     groceries = {}
+#     shopping = 'no'
+#     tab = 0
+
+#     while shopping == 'no':
+#         print("What should we add to our basket? ")
+#         a1 = input(">> ")
+#         groceries[a1] = round(random.uniform(.5, 10.5), 2)
+#         new_bill = groceries[a1]
+#         tab = tab + new_bill
+#         print(f"Tab Total: ${tab}")
+#         print("OUR BASKET:")
+#         for key in groceries:
+#             print(f"{key}: ${groceries[key]}")
+#         shopping = input('Are we done shopping? ')
+#         if shopping == 'yes':
+#             print('Done shopping!')
+#             break
+
+def total_bill(some_dictionary):
+    tab = 0
+    for value in some_dictionary.values():
+        tab = tab + value
+    return tab
+
+
 def groceries_list():
     groceries = {}
     shopping = 'no'
+    
+
     while shopping == 'no':
         print("What should we add to our basket? ")
         a1 = input(">> ")
-        groceries[a1] = round(random.uniform(10.5, 100.5), 2)
-        print(f"Our basket: {groceries}")
+        groceries[a1] = round(random.uniform(.5, 10.5), 2)
+        print("TOTAL BILL")
+        print(total_bill(groceries))
+        
+        
+        print("OUR BASKET:")
+        for key in groceries:
+            print(f"{key}: ${groceries[key]}")
         shopping = input('Are we done shopping? ')
         if shopping == 'yes':
             print('Done shopping!')
             break
+
+
+
+def total_bill(some_dictionary):
+    tab = 0
+    for value in some_dictionary.values():
+        tab = tab + value
+    return tab
+
+
+
+
 
     
  

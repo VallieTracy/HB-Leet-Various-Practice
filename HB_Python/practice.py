@@ -34,6 +34,24 @@ def evens(numbers):
     return new_list
 
 print(evens(my_list))
+
+#Write a function that takes a list of letters as an arg
+#The function should return a list, with the same items in the same order
+#but with any vowels appearing as stars *
+
+# ['h', 'e', 'l', 'l', 'o']
+#-> ['h', '*', 'l', 'l', '*']
+
+vowels = 'aeiou'
+my_list = ['h', 'e', 'l', 'l', 'o']
+
+def remove_vowels(letters):
+    for i in range(len(letters)):
+        if letters[i] in vowels:
+            letters[i] = '*'
+    return letters
+        
+print(remove_vowels(my_list))
     
 
 
