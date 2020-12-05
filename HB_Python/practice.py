@@ -42,16 +42,33 @@ print(evens(my_list))
 # ['h', 'e', 'l', 'l', 'o']
 #-> ['h', '*', 'l', 'l', '*']
 
-vowels = 'aeiou'
-my_list = ['h', 'e', 'l', 'l', 'o']
+# vowels = 'aeiou'
+# my_list = ['h', 'e', 'l', 'l', 'o']
 
-def remove_vowels(letters):
-    for i in range(len(letters)):
-        if letters[i] in vowels:
-            letters[i] = '*'
-    return letters
+# def remove_vowels(letters):
+#     for i in range(len(letters)):
+#         if letters[i] in vowels:
+#             letters[i] = '*'
+#     return letters
         
-print(remove_vowels(my_list))
+# print(remove_vowels(my_list))
+
+import time
+
+attempts = 0
+
+while attempts < 3:
+
+    timer = 5
+
+    while timer > 0:
+        print(timer, "...")
+        time.sleep(2)
+        timer = timer - 1
+
+    attempts = attempts + 1
+
+print("*** LIFTOFF ***")
     
 
 
