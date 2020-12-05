@@ -23,17 +23,17 @@
 # new_words = vowel_words(my_list)
 # print(f"All the words that start with vowels: {new_words}")
 
-my_list = []
+# my_list = []
 
-def evens(numbers):
-    new_list = []
-    for i in range(len(numbers)):
-        if numbers[i] % 2 == 0:
-            new_list.append(i)
+# def evens(numbers):
+#     new_list = []
+#     for i in range(len(numbers)):
+#         if numbers[i] % 2 == 0:
+#             new_list.append(i)
 
-    return new_list
+#     return new_list
 
-print(evens(my_list))
+# print(evens(my_list))
 
 #Write a function that takes a list of letters as an arg
 #The function should return a list, with the same items in the same order
@@ -53,23 +53,16 @@ print(evens(my_list))
         
 # print(remove_vowels(my_list))
 
-import time
 
-attempts = 0
+groc_letters = 'ubundsyer'
 
-while attempts < 3:
+# for i in range(len(groc_letters)-1):
+#     portion = groc_letters[i] + groc_letters[i+1]
+#     print(f"PORTION: {portion}")
+user_choice = 'nd'
+if user_choice in groc_letters:
+    print("TRUE")
 
-    timer = 5
-
-    while timer > 0:
-        print(timer, "...")
-        time.sleep(2)
-        timer = timer - 1
-
-    attempts = attempts + 1
-
-print("*** LIFTOFF ***")
-    
 
 
 

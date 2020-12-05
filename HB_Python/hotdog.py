@@ -18,7 +18,7 @@ def excitement(sent1, sent2, time_lapse):
 
 opening = "Because it's 2020, guess what..."
 closing = "YOU'RE A HOTDOG!"
-excitement(opening, closing, 5)
+excitement(opening, closing, 3)
 
 time.sleep(2)
 
@@ -26,11 +26,39 @@ next_line = "On the upside to 2020, you're actually a very charming hotdog."
 last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
 excitement(next_line, last_line, 1)
 
+def wrong_input(user_choice):
+    groc_letters = 'ubundsyer'
+    portions_list = []
+    for i in range(len(groc_letters)-1):
+        portion = groc_letters[i] + groc_letters[i+1]
+        portions_list.append(portion)
+  
+    if user_choice in portions_list:
+        print("I think you meant either CUB or Lunds & Byerly's.\nPlease verify by typing it again below.")
+    else:
+      print("That grocery store isn't in the list.  Try again...")
+                
+   
 # Initial conversation
 def convo():
-    print("We need to go to the grocery store.  Do you prefer CUB or Lunds & Byerly's?")
-    store = input("> ")
-    print(f"You chose {store}")
+    print("We need to go to the grocery store.  Do you prefer Cub or Lunds & Byerly's?")
+    
+    while True:
+      store = input("> ").lower()
+      
+    
+      if store.startswith('c'):
+        print(f"I'm a {store.lower()} shopper too!\nOk, off to {store.upper()} we go!")
+        print("-----breaking------")
+        break
+      elif store.startswith('l'):
+        print(f"You chose {store.lower()}.  You're bougie, I like it.")
+        print("------breaking-------")
+        break
+      else:
+        wrong_input(store)
+        
+    
     
     print("Are you ready to go?")
     a1 = input(">> ")
@@ -103,13 +131,6 @@ def groceries_list():
                 print(f"{key}: ${groceries[key]}")
             print('Done shopping!')
             break
-
-
-
-
-
-
-
 
 def hotdog():
     conversation
