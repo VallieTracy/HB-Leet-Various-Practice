@@ -53,15 +53,37 @@
         
 # print(remove_vowels(my_list))
 
+from random import choice
 
-groc_letters = 'ubundsyer'
+# groc1 = 'Cub Foods'
+# groc2 = "Lunds & Byerly's"
+# groc3 = 'Kowalskis'
+# groc4 = 'Whole Foods'
+# groc5 = 'ALDI'
+# groc6 = 'HyVee'
 
-# for i in range(len(groc_letters)-1):
-#     portion = groc_letters[i] + groc_letters[i+1]
-#     print(f"PORTION: {portion}")
-user_choice = 'nd'
-if user_choice in groc_letters:
-    print("TRUE")
+# new_list = (groc1 + groc2).replace(' ','').replace('&','').replace("'", '').lower()
+# print(new_list)
+# user_input = "unds and Byerly's" 
+# print(user_input)
+# user_input = user_input.replace(' ','').replace('&','').replace("'", '').lower()
+# if user_input in new_list:
+#     print(f"new_list: {new_list}")
+#     print(f"user_input: {user_input}")
+#     print(True)
+
+grocery_stores1 = ['Whole Foods', "Lunds & Byerly's", 'Kowalskis']
+grocery_stores2 = ['Cub Foods', 'ALDI', 'HyVee']
+
+def choose_2_stores(list1, list2):
+    first_store = choice(list1)
+    second_store = choice(list2)
+    return first_store, second_store
+
+# testing_stores = choose_2_stores(grocery_stores1, grocery_stores2)
+# print(testing_stores[0])
+store1 = choose_2_stores(grocery_stores1, grocery_stores2)[0]
+print(f"STORE1: {store1}")
 
 
 

@@ -1,6 +1,7 @@
 # Import dependencies
 import random
 import time
+from random import choice
 
 # Introducing the user to their life as a hotdog
 def excitement(sent1, sent2, time_lapse):
@@ -26,6 +27,11 @@ next_line = "On the upside to 2020, you're actually a very charming hotdog."
 last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
 excitement(next_line, last_line, 1)
 
+def choose_2_stores(list1, list2):
+    first_store = choice(list1)
+    second_store = choice(list2)
+    return first_store, second_store
+
 def wrong_input(user_choice):
     groc_letters = 'ubundsyer'
     portions_list = []
@@ -34,14 +40,14 @@ def wrong_input(user_choice):
         portions_list.append(portion)
   
     if user_choice in portions_list:
-        print("I think you meant either CUB or Lunds & Byerly's.\nPlease verify by typing it again below.")
+        print(f"I think you meant either {store1} or {store2}.\nPlease verify by typing it again below.")
     else:
       print("That grocery store isn't in the list.  Try again...")
                 
    
 # Initial conversation
 def convo():
-    print("We need to go to the grocery store.  Do you prefer Cub or Lunds & Byerly's?")
+    print(f"We need to go to the grocery store.  Do you prefer {store1} or {store2}?")
     
     while True:
       store = input("> ").lower()
@@ -137,6 +143,12 @@ def hotdog():
     driving_directions
     grocery_shopping
     print("...THE END...")
+
+
+stores_list1 = ['Whole Foods', "Lunds & Byerly's", 'Kowalskis']
+stores_list2 = ['Cub Foods', 'ALDI', 'HyVee']
+store1 = choose_2_stores(stores_list1, stores_list2)[0]
+store2 = choose_2_stores(stores_list1, stores_list2)[1]
 
 conversation = convo()
 driving_directions = driving()
