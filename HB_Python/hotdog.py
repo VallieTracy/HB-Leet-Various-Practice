@@ -3,7 +3,7 @@ import random
 import time
 from random import choice
 
-def excitement(sent1, sent2, time_lapse, symbol):
+def excitement(sent1, sent2, time_lapse, symbol, end_lapse):
     '''Adds time delay between sentences'''
     
     attempts = 0
@@ -18,7 +18,7 @@ def excitement(sent1, sent2, time_lapse, symbol):
             attempts = attempts + 1
     print(sent2)
     print()
-    time.sleep(2)
+    time.sleep(end_lapse)
 
 def choose_2_stores(list1, list2):
     '''Function that will randomly choose two items from two different lists'''
@@ -37,45 +37,59 @@ def wrong_input(user_choice, some_letters, more_letters):
     else:
       print("That grocery store isn't in the list.  Try again...")
                 
-   
-
 def convo():
-    '''******************** fill this in **********************'''
-    
-    print(f"We need to go to the grocery store.  Do you prefer {s1.upper()} or {s2.upper()}?")
+    '''A function that talks with the user based on user input'''
+
+    # Ask question in order to get input below, which is inside a while loop
+    print(f"We need to go to the grocery store before we head over to the party.  Do you prefer {s1.title()} or {s2.title()}?")
 
     # While loop
     while True:
-      store = input("> ").lower()
-      
-    
-      if store.startswith(s1l1.lower()):
-        print(f"I shop at {store.title()} too!\nOk, off to {store.title()} we go!")
-        
-        break
-      elif store.startswith(s2l1.lower()):
-        print(f"You chose {store.title()}.  You're bougie, I like it.")
-        
-        break
-      else:
-        wrong_input(store, s1, s2)
-        
-        
-    
-    
-    print("Are you ready to go?")
-    a1 = input(">> ")
-    if a1.startswith('y'):
-        print("You're ready to go.")
-    else:
-        print("You're not ready to go.  Too bad, you're a hotdog.  We're leaving.")
+        store = input(">> ").lower()
+        print()
+            
+        if store.startswith(s1l1.lower()):
+            # Reset variable in case user inputs correct first letter but then misspells
+            store = s1
+            print(f"I shop at {store.upper()} too!\nYou'd be surprised at the number of hotdogs that shop there.")
+            break
+        elif store.startswith(s2l1.lower()):
+            # Reset variable in case user inputs correct first letter but then misspells
+            store = s2
+            print(f"{store.upper()}, huh?  You're bougie, I like it.")
+            break
+        # if user enters a string not starting with the first letter of either store
+        else:
+            # call 'wrong_input' function based on 'store' variable created above,
+            # and s1 and s2, variables created from 'choose_2_stores' function and stored in 'caboodle' variable
+            wrong_input(store, s1, s2)
 
-    print("Do you want to drive?")
-    a2 = input(">> ")
-    if a2.startswith('y'):
-        print("Too bad, I'm driving.")
+    # Time delay between print statement based on grocery store choice & 'excitement' function
+    time.sleep(2)
+    excitement(a + store, b, 1, space, 0)   
+
+    # User input on if they're ready to leave or not    
+    a1 = input(">> ")
+    print()
+    
+    if a1.startswith('y'):
+        print("Cool, let's go.")
     else:
-        print("Good, I wasn't going to let you drive anyway!")
+        print("No?")
+        time.sleep(1)
+        print("Too bad, you're a hotdog.  We're leaving.")
+
+    # Time delay between 'leaving' statement and 'excitement' function about driving
+    time.sleep(2)
+    excitement(c, d, 2, space, 0)
+    
+    a2 = input(">> ")
+    print()
+    if a2.startswith('y'):
+        print("Driving a bun-mobile is like riding a bike.  Once you learn, you never forget. But I don't have time to teach you today.")
+    else:
+        print("It's super fun, it's a stick shift!  There aren't enough of those these days...")
+    
 
 def driving():
     miles = []
@@ -142,26 +156,38 @@ def hotdog():
     print("...THE END...")
 
 # # Variables to be used in 'excitement' function
-# opening = "Because it's 2020, guess what..."
-# closing = "YOU'RE A HOTDOG!"
-# period = '...'
-# excitement(opening, closing, 5, period)
+opening = "Because it's 2020, guess what..."
+closing = "YOU'RE A HOTDOG!"
+period = '...'
+excitement(opening, closing, 5, period, 2)
 
 # # Immediately repeat 'excitement' function with new variables
-# next_line = "On the upside to 2020, you're actually a very charming hotdog."
-# last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
-# space = ''
-# excitement(next_line, last_line, 4, space)
+next_line = "On the upside to 2020, you're actually a very charming hotdog."
+last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
+space = ''
+excitement(next_line, last_line, 4, space, 2)
 
 # Variables to store lists of various grocery stores
 stores_list1 = ['Cub Foods', 'ALDI', 'HyVee']
-stores_list2 = ['Whole Foods', "Lunds & Byerly's", 'Kowalskis']
+stores_list2 = ['Whole Foods', 'Lunds & Byerlys', 'Kowalskis']
 
+# Variables to store what was returned in the 'choose_2_stores' function
+
+# Returns a 4-item tuple: random first store, random second store, first letter of first store, first letter of second store
 caboodle = choose_2_stores(stores_list1, stores_list2)
+# Rewriting the four items from the above tuple
 s1 = caboodle[0]
 s2 = caboodle[1]
 s1l1 = caboodle[2]
 s2l1 = caboodle[3]
+
+# Sentences for 'excitement' function for being ready to leave
+a = 'Alright, we gotta head over to '
+b = 'Are you ready?'
+
+# Sentences for 'excitement' function for leaving for grocery store
+c = "2020 isn't all bad...you get to ride in a bun-mobile today!" 
+d = 'Do you want to drive?'
 
 conversation = convo()
 driving_directions = driving()
