@@ -4,65 +4,92 @@ import time
 from random import choice
 
 # Introducing the user to their life as a hotdog
-def excitement(sent1, sent2, time_lapse):
-  attempts = 0
-  print(sent1)
-  while attempts < 1:
-    timer = time_lapse
-    while timer > 0:
-      print('')
-      time.sleep(1)
-      timer = timer - 1
-    attempts = attempts + 1
-  print(sent2)
-  print()
+# def excitement(sent1, sent2, time_lapse):
+#   attempts = 0
+#   print(sent1)
+#   while attempts < 1:
+#     timer = time_lapse
+#     while timer > 0:
+#       print('')
+#       time.sleep(1)
+#       timer = timer - 1
+#     attempts = attempts + 1
+#   print(sent2)
+#   print()
 
-opening = "Because it's 2020, guess what..."
-closing = "YOU'RE A HOTDOG!"
-excitement(opening, closing, 3)
+# opening = "Because it's 2020, guess what..."
+# closing = "YOU'RE A HOTDOG!"
+# excitement(opening, closing, 3)
 
-time.sleep(2)
+# time.sleep(2)
 
-next_line = "On the upside to 2020, you're actually a very charming hotdog."
-last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
-excitement(next_line, last_line, 1)
+# next_line = "On the upside to 2020, you're actually a very charming hotdog."
+# last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
+# excitement(next_line, last_line, 1)
+
+
 
 def choose_2_stores(list1, list2):
     first_store = choice(list1)
     second_store = choice(list2)
-    return first_store, second_store
+    return first_store, second_store, first_store[0], second_store[0]
 
-def wrong_input(user_choice):
-    groc_letters = 'ubundsyer'
-    portions_list = []
-    for i in range(len(groc_letters)-1):
-        portion = groc_letters[i] + groc_letters[i+1]
-        portions_list.append(portion)
+stores_list1 = ['Cub Foods', 'ALDI', 'HyVee']
+stores_list2 = ['Whole Foods', "Lunds & Byerly's", 'Kowalskis']
+
+
+
+
+# def wrong_input(user_choice): WORKS
+#     groc_letters = 'ubundsyer'
+#     portions_list = []
+#     for i in range(len(groc_letters)-1):
+#         portion = groc_letters[i] + groc_letters[i+1]
+#         portions_list.append(portion)
   
-    if user_choice in portions_list:
-        print(f"I think you meant either {store1} or {store2}.\nPlease verify by typing it again below.")
+#     if user_choice in portions_list:
+#         print(f"I think you meant either {s1} or {s2}.\nPlease verify by typing it again below.")
+#     else:
+#       print("That grocery store isn't in the list.  Try again...")
+
+# def wrong_input(user_choice, some_words, more_words): WORKS
+#     groc_letters = some_words + more_words
+#     groc_letters = groc_letters.replace(' ','').replace('&','').replace("'", '').lower()
+#     if user_choice in groc_letters:
+#         print(f"I think you meant either {some_words} or {more_words}.\nPlease verify by typing it again below.")
+#     else:
+#       print("That grocery store isn't in the list.  Try again...")
+
+def wrong_input(user_choice, some_letters, more_letters): 
+    groc_letters = some_letters + more_letters
+    groc_letters = groc_letters.replace('&','').replace("'", '').lower()
+    if user_choice in groc_letters:
+        print(f"I think you meant either {some_letters} or {more_letters}.\nPlease verify by typing it again below.")
     else:
       print("That grocery store isn't in the list.  Try again...")
                 
    
 # Initial conversation
 def convo():
-    print(f"We need to go to the grocery store.  Do you prefer {store1} or {store2}?")
-    
+
+    print(f"We need to go to the grocery store.  Do you prefer {s1.upper()} or {s2.upper()}?")
+
+    # While loop
     while True:
       store = input("> ").lower()
       
     
-      if store.startswith('c'):
-        print(f"I'm a {store.lower()} shopper too!\nOk, off to {store.upper()} we go!")
-        print("-----breaking------")
+      if store.startswith(s1l1.lower()):
+        print(f"I shop at {store.title()} too!\nOk, off to {store.title()} we go!")
+        
         break
-      elif store.startswith('l'):
-        print(f"You chose {store.lower()}.  You're bougie, I like it.")
-        print("------breaking-------")
+      elif store.startswith(s2l1.lower()):
+        print(f"You chose {store.title()}.  You're bougie, I like it.")
+        
         break
       else:
-        wrong_input(store)
+        wrong_input(store, s1, s2)
+        
         
     
     
@@ -145,10 +172,11 @@ def hotdog():
     print("...THE END...")
 
 
-stores_list1 = ['Whole Foods', "Lunds & Byerly's", 'Kowalskis']
-stores_list2 = ['Cub Foods', 'ALDI', 'HyVee']
-store1 = choose_2_stores(stores_list1, stores_list2)[0]
-store2 = choose_2_stores(stores_list1, stores_list2)[1]
+caboodle = choose_2_stores(stores_list1, stores_list2)
+s1 = caboodle[0]
+s2 = caboodle[1]
+s1l1 = caboodle[2]
+s2l1 = caboodle[3]
 
 conversation = convo()
 driving_directions = driving()
