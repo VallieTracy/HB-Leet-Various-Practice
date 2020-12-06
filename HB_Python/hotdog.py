@@ -88,27 +88,34 @@ def convo():
     if a2.startswith('y'):
         print("Driving a bun-mobile is like riding a bike.  Once you learn, you never forget. But I don't have time to teach you today.")
     else:
-        print("It's super fun, it's a stick shift!  There aren't enough of those these days...")
+        print("You're missing out--it's a stick shift!  There aren't enough of those these days...")
     
 
 def driving():
+    '''********************************************'''    
+    excitement(e, f, 2, space, 0)
+    
+    # Empty list to store user input for miles traveled
     miles = []
-    print("Apple sucks, my iPhone died, and bun-mobiles aren't yet standard-equipped with GPS systems. I need you to navigate.")
-    print("How many blocks until we turn left?")
+    
     a1 = int(input(">> "))
     miles.append(a1)
+    print()
+    
     print("And then how many blocks do we go straight for? ")
     a2 = int(input(">> "))
     miles.append(a2)
-    print(travel_time(miles))
-
-
+    print()
+    
+    # Variable to store total miles, calculated in 'travel_time' function
+    total_miles = travel_time(miles)
+    print(f"Total Miles Traveled: {total_miles}")
+    
 
 def travel_time(distance):
     total_distance = sum(distance)
     time_to_store = total_distance * 4
-    return f"We're going a total of {total_distance} miles, which will take us {time_to_store} hours!"
-
+    return total_distance
 
 
 def total_bill(some_dictionary):
@@ -156,16 +163,16 @@ def hotdog():
     print("...THE END...")
 
 # # Variables to be used in 'excitement' function
-opening = "Because it's 2020, guess what..."
-closing = "YOU'RE A HOTDOG!"
+# opening = "Because it's 2020, guess what..."
+# closing = "YOU'RE A HOTDOG!"
 period = '...'
-excitement(opening, closing, 5, period, 2)
+# excitement(opening, closing, 5, period, 2)
 
 # # Immediately repeat 'excitement' function with new variables
-next_line = "On the upside to 2020, you're actually a very charming hotdog."
-last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
+# next_line = "On the upside to 2020, you're actually a very charming hotdog."
+# last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
 space = ''
-excitement(next_line, last_line, 4, space, 2)
+# excitement(next_line, last_line, 4, space, 2)
 
 # Variables to store lists of various grocery stores
 stores_list1 = ['Cub Foods', 'ALDI', 'HyVee']
@@ -189,9 +196,16 @@ b = 'Are you ready?'
 c = "2020 isn't all bad...you get to ride in a bun-mobile today!" 
 d = 'Do you want to drive?'
 
+
+e = "Bun-mobiles don't yet come standard-equipped with GPS.  I need you to navigate, please."
+f = 'How many blocks until we turn left?'
+
+# Storing information from 'convo' function into a variable
 conversation = convo()
+
 driving_directions = driving()
 grocery_shopping = groceries_list()
+
 hotdog()
 
 
