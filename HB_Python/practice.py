@@ -72,19 +72,19 @@ from random import choice
 #     print(f"user_input: {user_input}")
 #     print(True)
 
-grocery_stores1 = ['Whole Foods', "Lunds & Byerly's", 'Kowalskis']
-grocery_stores2 = ['Cub Foods', 'ALDI', 'HyVee']
+# grocery_stores1 = ['Whole Foods', "Lunds & Byerly's", 'Kowalskis']
+# grocery_stores2 = ['Cub Foods', 'ALDI', 'HyVee']
 
-def choose_2_stores(list1, list2):
-    first_store = choice(list1)
-    second_store = choice(list2)
-    return first_store, second_store, first_store[0], second_store[0]
+# def choose_2_stores(list1, list2):
+#     first_store = choice(list1)
+#     second_store = choice(list2)
+#     return first_store, second_store, first_store[0], second_store[0]
 
-# # testing_stores = choose_2_stores(grocery_stores1, grocery_stores2)
-# # print(testing_stores[0])
-caboodle = choose_2_stores(grocery_stores1, grocery_stores2)
-print(f"CABOODLE: {caboodle}")
-print(type(caboodle))
+# # # testing_stores = choose_2_stores(grocery_stores1, grocery_stores2)
+# # # print(testing_stores[0])
+# caboodle = choose_2_stores(grocery_stores1, grocery_stores2)
+# print(f"CABOODLE: {caboodle}")
+# print(type(caboodle))
 # s1 = caboodle[0]
 # s1l1 = s1[0]
 # print(f"S1L1: {s1l1}")
@@ -124,5 +124,21 @@ print(type(caboodle))
 #       print("That grocery store isn't in the list.  Try again...")
 
 
+def generic_error(question, dtype, y, z):
+    print(question)
+    while True:
+        
+        try:
+            user_choice = dtype(input(">> ").replace(y,z))
+            print(type(user_choice))
+            break
+        except:
+            print("Sorry, just enter a number")
+            pass
 
+question1 = 'QUESTION1'
+r = ''
+s = ''
+
+generic_error(question1, float, r, s)
 

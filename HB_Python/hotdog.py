@@ -3,9 +3,10 @@ import random
 import time
 from random import choice
 
-def excitement(sent1, sent2, time_lapse, symbol, end_lapse):
+def excitement(front_lapse, sent1, sent2, time_lapse, symbol, end_lapse):
     '''Adds time delay between sentences'''
     
+    time.sleep(front_lapse)
     attempts = 0
     print()
     print(sent1)
@@ -64,9 +65,8 @@ def convo():
             # and s1 and s2, variables created from 'choose_2_stores' function and stored in 'caboodle' variable
             wrong_input(store, s1, s2)
 
-    # Time delay between print statement based on grocery store choice & 'excitement' function
-    time.sleep(2)
-    excitement(a + store, b, 1, space, 0)   
+    # Time delay between print statement based on grocery store choice & are you ready 
+    excitement(2, a + store, b, 1, space, 0)   
 
     # User input on if they're ready to leave or not    
     a1 = input(">> ")
@@ -80,42 +80,65 @@ def convo():
         print("Too bad, you're a hotdog.  We're leaving.")
 
     # Time delay between 'leaving' statement and 'excitement' function about driving
-    time.sleep(2)
-    excitement(c, d, 2, space, 0)
+    excitement(2, c, d, 2, space, 2)
     
+    # Asking user if they'd like to drive
     a2 = input(">> ")
     print()
     if a2.startswith('y'):
+        time.sleep(1)
         print("Driving a bun-mobile is like riding a bike.  Once you learn, you never forget. But I don't have time to teach you today.")
     else:
+        time.sleep(1)
         print("You're missing out--it's a stick shift!  There aren't enough of those these days...")
     
 
 def driving():
-    '''********************************************'''    
-    excitement(e, f, 2, space, 0)
+    '''Make a list of miles traveled along the route'''    
+    excitement(3, e, f, 2, space, 0)
     
     # Empty list to store user input for miles traveled
     miles = []
     
+    # Get user input to append empty miles list
     a1 = int(input(">> "))
     miles.append(a1)
     print()
-    
     print("And then how many blocks do we go straight for? ")
     a2 = int(input(">> "))
     miles.append(a2)
     print()
     
-    # Variable to store total miles, calculated in 'travel_time' function
-    total_miles = travel_time(miles)
-    print(f"Total Miles Traveled: {total_miles}")
+    # Variables to store values returned from 'travel_time' function
+    total_miles = travel_time(miles)[0]
+    total_time = travel_time(miles)[1]
+    
+    # Calling generic_error function in order to try to ask for user input
+    generic_error(question1, float, r, s)
+    print()
+    print("Nope!")
+    print("Fun fact, bun-mobiles can actually only travel 3 miles per hour.")
+    print(f"And we traveled {total_miles} miles.")
+    print(f"So it's gonna take {total_time} hours. We should have left earlier.")
     
 
+def generic_error(question, dtype, y, z):
+    '''Generic error function which takes in input prompt, data type, and items to be replaced'''
+
+    print(question)
+    while True:
+        try:
+            user_choice = dtype(input(">> ").replace(y, z))
+            break
+        except:
+            print("Sorry, just enter a number")
+            pass
+
 def travel_time(distance):
+    '''Returns calculations, takes list as argument'''
     total_distance = sum(distance)
     time_to_store = total_distance * 4
-    return total_distance
+    return total_distance, time_to_store
 
 
 def total_bill(some_dictionary):
@@ -162,17 +185,17 @@ def hotdog():
     grocery_shopping
     print("...THE END...")
 
-# # Variables to be used in 'excitement' function
-# opening = "Because it's 2020, guess what..."
-# closing = "YOU'RE A HOTDOG!"
+# Variables to be used in 'excitement' function
+opening = "Because it's 2020, guess what..."
+closing = "YOU'RE A HOTDOG!"
 period = '...'
-# excitement(opening, closing, 5, period, 2)
+excitement(0, opening, closing, 5, period, 2)
 
-# # Immediately repeat 'excitement' function with new variables
-# next_line = "On the upside to 2020, you're actually a very charming hotdog."
-# last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
+# Immediately repeat 'excitement' function with new variables
+next_line = "On the upside to 2020, you're actually a very charming hotdog."
+last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
 space = ''
-# excitement(next_line, last_line, 4, space, 2)
+excitement(0, next_line, last_line, 4, space, 2)
 
 # Variables to store lists of various grocery stores
 stores_list1 = ['Cub Foods', 'ALDI', 'HyVee']
@@ -188,17 +211,24 @@ s2 = caboodle[1]
 s1l1 = caboodle[2]
 s2l1 = caboodle[3]
 
-# Sentences for 'excitement' function for being ready to leave
+# Sentences for 'excitement' function:
+
+# for being ready to leave
 a = 'Alright, we gotta head over to '
 b = 'Are you ready?'
 
-# Sentences for 'excitement' function for leaving for grocery store
+# leaving for grocery store
 c = "2020 isn't all bad...you get to ride in a bun-mobile today!" 
 d = 'Do you want to drive?'
 
-
-e = "Bun-mobiles don't yet come standard-equipped with GPS.  I need you to navigate, please."
+# navigation
+e = "Because you're not driving and bun-mobiles don't yet come standard-equipped with GPS, I need you to navigate."
 f = 'How many blocks until we turn left?'
+
+# Variables for generic_error function, guessing time to party
+question1 = "Guess how many hours it'll take us to get to the party:"
+r = ','
+s = ''
 
 # Storing information from 'convo' function into a variable
 conversation = convo()
