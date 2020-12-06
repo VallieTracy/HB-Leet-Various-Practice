@@ -102,6 +102,26 @@ if user_choice in groc_letters:
 else:
     print("That grocery store isn't in the list.  Try again...")
 
+# def wrong_input(user_choice): WORKS
+#     groc_letters = 'ubundsyer'
+#     portions_list = []
+#     for i in range(len(groc_letters)-1):
+#         portion = groc_letters[i] + groc_letters[i+1]
+#         portions_list.append(portion)
+  
+#     if user_choice in portions_list:
+#         print(f"I think you meant either {s1} or {s2}.\nPlease verify by typing it again below.")
+#     else:
+#       print("That grocery store isn't in the list.  Try again...")
+
+# def wrong_input(user_choice, some_words, more_words): WORKS
+#     groc_letters = some_words + more_words
+#     groc_letters = groc_letters.replace(' ','').replace('&','').replace("'", '').lower()
+#     if user_choice in groc_letters:
+#         print(f"I think you meant either {some_words} or {more_words}.\nPlease verify by typing it again below.")
+#     else:
+#       print("That grocery store isn't in the list.  Try again...")
+
 
 
 
