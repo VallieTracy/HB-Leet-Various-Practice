@@ -41,7 +41,7 @@ def wrong_input(user_choice, some_letters, more_letters):
 def convo():
     '''A function that talks with the user based on user input'''
 
-    # Ask question in order to get input below, which is inside a while loop
+    # Ask question in order to get input below, then a while loop
     print(f"We need to go to the grocery store before we head over to the party.  Do you prefer {s1.title()} or {s2.title()}?")
 
     # While loop
@@ -202,7 +202,6 @@ stores_list1 = ['Cub Foods', 'ALDI', 'HyVee']
 stores_list2 = ['Whole Foods', 'Lunds & Byerlys', 'Kowalskis']
 
 # Variables to store what was returned in the 'choose_2_stores' function
-
 # Returns a 4-item tuple: random first store, random second store, first letter of first store, first letter of second store
 caboodle = choose_2_stores(stores_list1, stores_list2)
 # Rewriting the four items from the above tuple
