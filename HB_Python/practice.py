@@ -150,37 +150,54 @@ from random import choice
 # for key in groceries:
 #     print(f"{key}: ${groceries[key]}")
 
+
+
+# while i < 3:
+#     while True:
+#         try:
+#             ability = input(">> ").lower()
+#             if ability.startswith('n'):
+#                 if i == 3:
+#                     print("well whatever, all you need to know is...")
+#                 print(f"She's the one with {desc[i]}")
+#                 print("Do you see her now?")
+#                 i = i + 1
+            
+#         except:
+#             print("Her name is Shawniece and she's a reaaal bitch.")
+#             break
+#     break
+
 desc = ['red hair', 'ugly wedges', 'burnt hamburger']
 
 i = 0
 print("Do you see?")
 
-# while i < 3:
-    
-#     while True:
-#         ability = input(">> ").lower()
-#         if ability.startswith('n'):
-#             print(f"She's the one with {desc[i]}")
-#             print("Do you see her now?")
-#             i = i + 1
-            
-#         else:
-#             print("Her name is Shawniece and she's a reaaal bitch.")
-#             break
-#     break
 
 while True:
     while i < 4:
-        try:
-            ability = input(">> ").lower()
-            if ability.startswith('n'):
-                print(f"She's the one with {desc[i]}")
-                print("Do you see her now?")
-                i = i + 1
+        ability = input(">> ").lower()
+        if ability.startswith('n'):
+            if i == 3:
+                print("i is 3!")
+                print("well whatever, all you need to know is that")
+                break
+            print(f"i: {i}")
+            print(f"She's the one with {desc[i]}")
+            print("Do you see her now?")
             
-        except:
-            print("Her name is Shawniece and she's a reaaal bitch.")
+
+            i = i + 1
+
+        if ability.startswith('y'):
             break
+                   
+        
+
+       
+        
     break
+
+print("She's a real bitch.")
 
   

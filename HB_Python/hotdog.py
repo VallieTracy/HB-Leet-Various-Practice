@@ -199,18 +199,31 @@ def party_arrival():
         time.sleep(1)
     
     desc = ['red hair', 'ugly wedges', 'burnt hamburger']
-
+    i = 0
     print("Don't look now, but do you see that hotdog over there?")
+
     while True:
-        ability = input(">> ").lower()
-        if ability.startswith('n'):
-            i = 0
-            while i < 3:
-                print(f"She's the one with {desc[i]}")
-                print("Do you see her now?")
-        else:
-            print("Her name is Shawniece and she's a reaaal bitch.")
-            break    
+        while i < 4:
+            try:
+                ability = input(">> ").lower()
+                if ability.startswith('n'):
+                    print(f"i: {i}")
+                    if i == 3:
+                        print("i is 3!")
+                        print("well whatever, all you need to know is that")
+                    print(f"She's the one with {desc[i]}")
+                    print("Do you see her now?")
+                    i = i + 1
+                    print(f"new i: {i}")
+                else:
+                    pass
+
+            except:
+                print("Her name is Shawniece and she's a reaaal bitch.")
+                break
+        break
+   
+
     
 
 
