@@ -188,10 +188,30 @@ def groceries_list():
     print("Alright, let's get outta here. Time to part-ay!") # add grocery store here!
 
 def party_arrival():
+    '''---------DESCRIPTION HERE----------------'''
+
+    # Manhandled the function here instead of using the 'excitement' function in order to get it to look they way I want it
     print("-----")
-    print("[Segue to party arrival]")
+    print("[Segue to party arrival and perusing the crowd]")
     print("-----")
-    excitement(0, j, k, 5, '*', 2)
+    for i in range(5):
+        print('*')
+        time.sleep(1)
+    
+    desc = ['red hair', 'ugly wedges', 'burnt hamburger']
+
+    print("Don't look now, but do you see that hotdog over there?")
+    while True:
+        ability = input(">> ").lower()
+        if ability.startswith('n'):
+            i = 0
+            while i < 3:
+                print(f"She's the one with {desc[i]}")
+                print("Do you see her now?")
+        else:
+            print("Her name is Shawniece and she's a reaaal bitch.")
+            break    
+    
 
 
 def hotdog():
@@ -248,10 +268,6 @@ f = 'How many blocks until we turn left?'
 # grocery shopping
 g = f"Now that we're at the grocery store, it's time to shop!"
 h = ''
-
-# party arrival
-j = ''
-k = "Don't look now, but do you see that hotdog over there?"
 
 # Variables for generic_error function, guessing time to party
 question1 = "Guess how many hours it'll take us to get to the party:"

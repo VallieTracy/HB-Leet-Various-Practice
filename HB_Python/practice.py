@@ -146,6 +146,41 @@ import random
 import time
 from random import choice
 
-print("Here's what we're bringing to the party and the cost breakdown:")
-for key in groceries:
-    print(f"{key}: ${groceries[key]}")
+# print("Here's what we're bringing to the party and the cost breakdown:")
+# for key in groceries:
+#     print(f"{key}: ${groceries[key]}")
+
+desc = ['red hair', 'ugly wedges', 'burnt hamburger']
+
+i = 0
+print("Do you see?")
+
+# while i < 3:
+    
+#     while True:
+#         ability = input(">> ").lower()
+#         if ability.startswith('n'):
+#             print(f"She's the one with {desc[i]}")
+#             print("Do you see her now?")
+#             i = i + 1
+            
+#         else:
+#             print("Her name is Shawniece and she's a reaaal bitch.")
+#             break
+#     break
+
+while True:
+    while i < 4:
+        try:
+            ability = input(">> ").lower()
+            if ability.startswith('n'):
+                print(f"She's the one with {desc[i]}")
+                print("Do you see her now?")
+                i = i + 1
+            
+        except:
+            print("Her name is Shawniece and she's a reaaal bitch.")
+            break
+    break
+
+  
