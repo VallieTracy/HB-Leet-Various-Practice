@@ -91,7 +91,7 @@ def convo():
     else:
         time.sleep(1)
         print("You're missing out--it's a stick shift!  There aren't enough of those these days...")
-    
+    return store
 
 def driving():
     '''Make a list of miles traveled along the route'''    
@@ -140,62 +140,75 @@ def travel_time(distance):
     time_to_store = total_distance * 4
     return total_distance, time_to_store
 
-
 def total_bill(some_dictionary):
     # Initial tab of 0
     tab = 0
-    
-    print("TOTAL TAB:")
-    
+        
     for value in some_dictionary.values():
         tab = tab + value
     
     return tab
 
-
 def groceries_list():
+    '''Asks for user input and builds a dictionary'''
+
+    excitement(1, g, h, 1, space, 1)
+
     # Set initial values
     groceries = {}
     shopping = 'no'
     
     # While loop to generate grocery shopping
     while shopping == 'no':
-        print("What should we add to our basket? ")
-
+        print("What should we add to our basket?")
         # Creates the groceries dictionary
         a1 = input(">> ")
+        print()
         groceries[a1] = round(random.uniform(.5, 10.5), 2)
 
         # Call total_bill function and store in a variable
-        total_tab = total_bill(groceries)
-        print(f"${total_tab}")
-                
+        total_tab = format(total_bill(groceries), '.2f')
+                        
         # Determinant of loop closure
         shopping = input('Are we done shopping? ')
         if shopping == 'yes':
-            print("Here's what we're bringing to the party and the cost breakdown:")
-            for key in groceries:
-                print(f"{key}: ${groceries[key]}")
-            print('Done shopping!')
+            print()
+            print(f"Our TOTAL TAB:")
+            print(f"${total_tab}")
+            print()
             break
 
+    print("Would you like to see a list of what we bought and the cost breakdown?")
+    receipt = input(">> ").lower()
+    if receipt.startswith('y'):
+        print()
+        for key in groceries:
+            print(f"  {key.title()}: ${groceries[key]}")
+    
+    print("Alright, let's get outta here. Time to part-ay!") # add grocery store here!
+
+def party_arrival():
+    excitement(0, j, k, 5, '*', 2)
+
+
 def hotdog():
-    conversation
-    driving_directions
+    #conversation
+    #driving_directions
     grocery_shopping
+    arrival
     print("...THE END...")
 
 # Variables to be used in 'excitement' function
 opening = "Because it's 2020, guess what..."
 closing = "YOU'RE A HOTDOG!"
 period = '...'
-excitement(0, opening, closing, 5, period, 2)
+#excitement(0, opening, closing, 5, period, 2)
 
 # Immediately repeat 'excitement' function with new variables
 next_line = "On the upside to 2020, you're actually a very charming hotdog."
 last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
 space = ''
-excitement(0, next_line, last_line, 4, space, 2)
+#excitement(0, next_line, last_line, 4, space, 2)
 
 # Variables to store lists of various grocery stores
 stores_list1 = ['Cub Foods', 'ALDI', 'HyVee']
@@ -204,6 +217,7 @@ stores_list2 = ['Whole Foods', 'Lunds & Byerlys', 'Kowalskis']
 # Variables to store what was returned in the 'choose_2_stores' function
 # Returns a 4-item tuple: random first store, random second store, first letter of first store, first letter of second store
 caboodle = choose_2_stores(stores_list1, stores_list2)
+
 # Rewriting the four items from the above tuple
 s1 = caboodle[0]
 s2 = caboodle[1]
@@ -211,7 +225,7 @@ s1l1 = caboodle[2]
 s2l1 = caboodle[3]
 
 # Sentences for 'excitement' function:
-
+# ---------
 # for being ready to leave
 a = 'Alright, we gotta head over to '
 b = 'Are you ready?'
@@ -224,16 +238,29 @@ d = 'Do you want to drive?'
 e = "Because you're not driving and bun-mobiles don't yet come standard-equipped with GPS, I need you to navigate."
 f = 'How many blocks until we turn left?'
 
+# Storing information from 'convo' function into a variable
+# Needs to come above where we declare 'g' variable
+#conversation = convo()
+
+# grocery shopping
+g = f"Now that we're at the grocery store, it's time to shop!"
+h = ''
+
+# party arrival
+j = ''
+k = 'Do you see that hotdog over there?'
+
 # Variables for generic_error function, guessing time to party
 question1 = "Guess how many hours it'll take us to get to the party:"
 r = ','
 s = ''
 
-# Storing information from 'convo' function into a variable
-conversation = convo()
 
-driving_directions = driving()
+
+
+#driving_directions = driving()
 grocery_shopping = groceries_list()
+arrival = party_arrival()
 
 hotdog()
 
