@@ -188,6 +188,9 @@ def groceries_list():
     print("Alright, let's get outta here. Time to part-ay!") # add grocery store here!
 
 def party_arrival():
+    print("-----")
+    print("[Segue to party arrival]")
+    print("-----")
     excitement(0, j, k, 5, '*', 2)
 
 
@@ -248,7 +251,7 @@ h = ''
 
 # party arrival
 j = ''
-k = 'Do you see that hotdog over there?'
+k = "Don't look now, but do you see that hotdog over there?"
 
 # Variables for generic_error function, guessing time to party
 question1 = "Guess how many hours it'll take us to get to the party:"
