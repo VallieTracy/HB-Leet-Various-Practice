@@ -120,6 +120,9 @@ def driving():
     print("Fun fact, bun-mobiles can actually only travel 3 miles per hour.")
     print(f"And we traveled {total_miles} miles.")
     print(f"So it's gonna take {total_time} hours. We should have left earlier.")
+    return total_time, total_miles
+
+    
     
 
 def generic_error(question, dtype, y, z):
@@ -229,9 +232,9 @@ def party_arrival(desc_list):
 
 
 def hotdog():
-    #conversation
-    #driving_directions
-    #grocery_shopping
+    conversation
+    driving_directions
+    grocery_shopping
     arrival
     print("...THE END...")
 
@@ -239,13 +242,13 @@ def hotdog():
 opening = "Because it's 2020, guess what..."
 closing = "YOU'RE A HOTDOG!"
 period = '...'
-#excitement(0, opening, closing, 5, period, 2)
+excitement(0, opening, closing, 5, period, 2)
 
 # Immediately repeat 'excitement' function with new variables
 next_line = "On the upside to 2020, you're actually a very charming hotdog."
 last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
 space = ''
-#excitement(0, next_line, last_line, 4, space, 2)
+excitement(0, next_line, last_line, 4, space, 2)
 
 # Variables to store lists of various grocery stores
 stores_list1 = ['Cub Foods', 'ALDI', 'HyVee']
@@ -277,7 +280,7 @@ f = 'How many blocks until we turn left?'
 
 # Storing information from 'convo' function into a variable
 # Needs to come above where we declare 'g' variable
-#conversation = convo()
+conversation = convo()
 
 # grocery shopping
 g = f"Now that we're at the grocery store, it's time to shop!"
@@ -292,14 +295,14 @@ descriptions = ['with red hair', 'standing by the pool', 'taking a selfie']
 
 j = "Her name is Shawniece."
 k = "And she's a total bitch!"
-l = "I'll tell you all about it on our XYZ hour trip home!"
+l = "I'll tell you all about it on our umpteen hour trip home!"
 m = "Alright, because we're good little hotdogs and listen to Governor Walz\nLet's put our masks on and party social-distance style\n...\nTime to mingle!!!!!!!!"
 
 
 
 
-#driving_directions = driving()
-#grocery_shopping = groceries_list()
+driving_directions = driving()
+grocery_shopping = groceries_list()
 arrival = party_arrival(descriptions)
 
 hotdog()
