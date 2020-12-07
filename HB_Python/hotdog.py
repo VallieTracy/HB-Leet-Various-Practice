@@ -187,41 +187,42 @@ def groceries_list():
     
     print("Alright, let's get outta here. Time to part-ay!") # add grocery store here!
 
-def party_arrival():
+def party_arrival(desc_list):
     '''---------DESCRIPTION HERE----------------'''
 
     # Manhandled the function here instead of using the 'excitement' function in order to get it to look they way I want it
     print("-----")
     print("[Segue to party arrival and perusing the crowd]")
     print("-----")
-    for i in range(5):
+    for i in range(1):
         print('*')
         time.sleep(1)
     
-    desc = ['red hair', 'ugly wedges', 'burnt hamburger']
-    i = 0
+    # Prompting the user for input
     print("Don't look now, but do you see that hotdog over there?")
-
+    # Starting at 0, give user 3 tries to answer 'yes'
+    i = 0
     while True:
         while i < 4:
-            try:
-                ability = input(">> ").lower()
-                if ability.startswith('n'):
-                    print(f"i: {i}")
-                    if i == 3:
-                        print("i is 3!")
-                        print("well whatever, all you need to know is that")
-                    print(f"She's the one with {desc[i]}")
-                    print("Do you see her now?")
-                    i = i + 1
-                    print(f"new i: {i}")
-                else:
-                    pass
-
-            except:
-                print("Her name is Shawniece and she's a reaaal bitch.")
+            ability = input(">> ").lower()
+            if ability.startswith('n'):
+                if i == 3:
+                    print("Well whatever...all you need to know is that")
+                    break
+                print(f"She's the one {desc_list[i]}.")
+                print("Do you see her now?")
+                
+                i = i + 1
+                
+            if ability.startswith('y'):
                 break
         break
+
+    # Final four statements before program ends!
+    excitement(2, j, k, 3, space, 2)
+    excitement(1, l, m, 4, space, 2)
+
+    
    
 
     
@@ -230,7 +231,7 @@ def party_arrival():
 def hotdog():
     #conversation
     #driving_directions
-    grocery_shopping
+    #grocery_shopping
     arrival
     print("...THE END...")
 
@@ -287,12 +288,19 @@ question1 = "Guess how many hours it'll take us to get to the party:"
 r = ','
 s = ''
 
+descriptions = ['with red hair', 'standing by the pool', 'taking a selfie']
+
+j = "Her name is Shawniece."
+k = "And she's a total bitch!"
+l = "I'll tell you all about it on our XYZ hour trip home!"
+m = "Alright, because we're good little hotdogs and listen to Governor Walz\nLet's put our masks on and party social-distance style\n...\nTime to mingle!!!!!!!!"
+
 
 
 
 #driving_directions = driving()
-grocery_shopping = groceries_list()
-arrival = party_arrival()
+#grocery_shopping = groceries_list()
+arrival = party_arrival(descriptions)
 
 hotdog()
 
