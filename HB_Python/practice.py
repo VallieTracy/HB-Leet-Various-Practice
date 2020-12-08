@@ -167,37 +167,29 @@ from random import choice
 #             print("Her name is Shawniece and she's a reaaal bitch.")
 #             break
 #     break
+print("Are you ready to go?")
+while True:   
+    a1 = input(">> ").lower()
+    print("*")
 
-desc = ['red hair', 'ugly wedges', 'burnt hamburger']
-
-i = 0
-print("Do you see?")
-
-
-while True:
-    while i < 4:
-        ability = input(">> ").lower()
-        if ability.startswith('n'):
-            if i == 3:
-                print("i is 3!")
-                print("well whatever, all you need to know is that")
-                break
-            print(f"i: {i}")
-            print(f"She's the one with {desc[i]}")
-            print("Do you see her now?")
-            
-
-            i = i + 1
-
-        if ability.startswith('y'):
+    if a1.startswith('y'):
+        print("Cool, let's go.")
+        break
+    elif a1.startswith('n'):
+        print("No?")
+        time.sleep(1)
+        print("Too bad, you're a hotdog.  We're leaving.")
+        break
+    else:
+        print("I didn't understand your response.  Please type yes or no.")
+        try:
+            a1 = input(">> ").lower()
             break
-                   
-        
-
-       
-        
-    break
-
-print("She's a real bitch.")
+        except:
+            want = 'yn'
+            if a1 in want:
+                print("1 of 2 test print statements")
+            else:
+                print("Nope, Try again...")
 
   

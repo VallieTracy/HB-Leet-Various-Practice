@@ -66,18 +66,30 @@ def convo():
             wrong_input(store, s1, s2)
 
     # Time delay between print statement based on grocery store choice & are you ready 
-    excitement(2, a + store, b, 1, space, 0)   
+    excitement(2, a, b, 1, space, 0)   
 
-    # User input on if they're ready to leave or not    
-    a1 = input(">> ")
+    # User input on if they're ready to leave or not
+    while True:   
+    a1 = input(">> ").lower()
     print()
     
     if a1.startswith('y'):
         print("Cool, let's go.")
-    else:
+        break
+    elif a1.startswith('n'):
         print("No?")
         time.sleep(1)
         print("Too bad, you're a hotdog.  We're leaving.")
+        break
+    else:
+        print("I didn't understand your response.  Please type yes or no.")
+        while True:
+            try:
+                a1 = input(">> ").lower()
+                break
+            except:
+                print("Sorry")
+                pass
 
     # Time delay between 'leaving' statement and 'excitement' function about driving
     excitement(2, c, d, 2, space, 2)
@@ -233,22 +245,22 @@ def party_arrival(desc_list):
 
 def hotdog():
     conversation
-    driving_directions
-    grocery_shopping
-    arrival
+    #driving_directions
+    #grocery_shopping
+    #arrival
     print("...THE END...")
 
 # Variables to be used in 'excitement' function
 opening = "Because it's 2020, guess what..."
 closing = "YOU'RE A HOTDOG!"
 period = '...'
-excitement(0, opening, closing, 5, period, 2)
+#excitement(0, opening, closing, 5, period, 2)
 
 # Immediately repeat 'excitement' function with new variables
 next_line = "On the upside to 2020, you're actually a very charming hotdog."
 last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
 space = ''
-excitement(0, next_line, last_line, 4, space, 2)
+#excitement(0, next_line, last_line, 4, space, 2)
 
 # Variables to store lists of various grocery stores
 stores_list1 = ['Cub Foods', 'ALDI', 'HyVee']
@@ -267,7 +279,7 @@ s2l1 = caboodle[3]
 # Sentences for 'excitement' function:
 # ---------
 # for being ready to leave
-a = 'Alright, we gotta head over to '
+a = "Alright, let's get outta here."
 b = 'Are you ready?'
 
 # leaving for grocery store
