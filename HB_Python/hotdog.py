@@ -32,7 +32,7 @@ def choose_2_stores(list1, list2):
 def wrong_input(user_choice, some_letters, more_letters): 
     '''Combine two strings, check to see if 'user_choice' is in that combination, and then print based on if/else'''
     groc_letters = some_letters + more_letters
-    groc_letters = groc_letters.replace('&','').replace("'", '').lower()
+    groc_letters = groc_letters.replace("&",'').replace("'", '').lower()
     if user_choice in groc_letters:
         print(f"I think you meant either {some_letters} or {more_letters}.\nPlease verify by typing it again below.")
     else:
@@ -70,57 +70,69 @@ def convo():
 
     # User input on if they're ready to leave or not
     while True:   
-    a1 = input(">> ").lower()
-    print()
+        a1 = input(">> ").lower()
+        print()
     
-    if a1.startswith('y'):
-        print("Cool, let's go.")
-        break
-    elif a1.startswith('n'):
-        print("No?")
-        time.sleep(1)
-        print("Too bad, you're a hotdog.  We're leaving.")
-        break
-    else:
-        print("I didn't understand your response.  Please type yes or no.")
-        while True:
-            try:
-                a1 = input(">> ").lower()
-                break
-            except:
-                print("Sorry")
-                pass
+        if a1.startswith('y'):
+            print("Cool, let's go.")
+            break
+        elif a1.startswith('n'):
+            print("No?")
+            time.sleep(1)
+            print("Too bad, you're a hotdog.  We're leaving.")
+            break
+        else:
+            print("Your response isn't a variation of yes or no that I understand.\nPlease try again:")
+            print()
+   
 
     # Time delay between 'leaving' statement and 'excitement' function about driving
-    excitement(2, c, d, 2, space, 2)
+    excitement(1, c, d, 2, space, 0)
     
     # Asking user if they'd like to drive
-    a2 = input(">> ")
-    print()
-    if a2.startswith('y'):
-        time.sleep(1)
-        print("Driving a bun-mobile is like riding a bike.  Once you learn, you never forget. But I don't have time to teach you today.")
-    else:
-        time.sleep(1)
-        print("You're missing out--it's a stick shift!  There aren't enough of those these days...")
+    while True:
+        a2 = input(">> ").lower()
+        print()
+        
+        if a2.startswith('y'):
+            time.sleep(1)
+            print("Driving a bun-mobile is like riding a bike.  Once you learn, you never forget. But I don't have time to teach you today.")
+            break
+        elif a2.startswith('n'):
+            time.sleep(1)
+            print("You're missing out--it's a stick shift!  There aren't enough of those these days...")
+            break
+        else:
+            print("Your response isn't a variation of yes or no that I understand.\nPlease try again:")
+    
     return store
 
 def driving():
     '''Make a list of miles traveled along the route'''    
-    excitement(3, e, f, 2, space, 0)
+    excitement(3, e, f, 2, space, 2)
     
     # Empty list to store user input for miles traveled
     miles = []
+
+    # List of driving directions questions to get input from user
+    drive_questions = ['How many blocks until we turn left?',
+                       'And then how many blocks do we go straight for?']
     
     # Get user input to append empty miles list
-    a1 = int(input(">> "))
-    miles.append(a1)
+    for i in range(len(drive_questions)):
+        print(drive_questions[i])
+        print()
+        while True:
+            try:
+                answer = int(input(">> "))
+                miles.append(answer)
+                break
+            except:
+                print("Please try again.  I only understand integers.")
+                print()
+            pass
     print()
-    print("And then how many blocks do we go straight for? ")
-    a2 = int(input(">> "))
-    miles.append(a2)
-    print()
-    
+
     # Variables to store values returned from 'travel_time' function
     total_miles = travel_time(miles)[0]
     total_time = travel_time(miles)[1]
@@ -134,9 +146,6 @@ def driving():
     print(f"So it's gonna take {total_time} hours. We should have left earlier.")
     return total_time, total_miles
 
-    
-    
-
 def generic_error(question, dtype, y, z):
     '''Generic error function which takes in input prompt, data type, and items to be replaced'''
 
@@ -147,6 +156,7 @@ def generic_error(question, dtype, y, z):
             break
         except:
             print("Sorry, just enter a number")
+            print()
             pass
 
 def travel_time(distance):
@@ -156,12 +166,11 @@ def travel_time(distance):
     return total_distance, time_to_store
 
 def total_bill(some_dictionary):
+    '''Adds values of key:value pair in a dictionary and returns the total'''
     # Initial tab of 0
     tab = 0
-        
     for value in some_dictionary.values():
         tab = tab + value
-    
     return tab
 
 def groceries_list():
@@ -237,12 +246,6 @@ def party_arrival(desc_list):
     excitement(2, j, k, 3, space, 2)
     excitement(1, l, m, 4, space, 2)
 
-    
-   
-
-    
-
-
 def hotdog():
     conversation
     #driving_directions
@@ -263,8 +266,8 @@ space = ''
 #excitement(0, next_line, last_line, 4, space, 2)
 
 # Variables to store lists of various grocery stores
-stores_list1 = ['Cub Foods', 'ALDI', 'HyVee']
-stores_list2 = ['Whole Foods', 'Lunds & Byerlys', 'Kowalskis']
+stores_list1 = ['Cub Foods', 'Walmart', "Costco"]
+stores_list2 = ['Whole Foods', "Lunds & Byerlys", 'Kowalskis']
 
 # Variables to store what was returned in the 'choose_2_stores' function
 # Returns a 4-item tuple: random first store, random second store, first letter of first store, first letter of second store
@@ -288,7 +291,7 @@ d = 'Do you want to drive?'
 
 # navigation
 e = "Because you're not driving and bun-mobiles don't yet come standard-equipped with GPS, I need you to navigate."
-f = 'How many blocks until we turn left?'
+f = 'The map is in the glove box.'
 
 # Storing information from 'convo' function into a variable
 # Needs to come above where we declare 'g' variable

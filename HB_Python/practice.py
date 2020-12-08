@@ -167,29 +167,44 @@ from random import choice
 #             print("Her name is Shawniece and she's a reaaal bitch.")
 #             break
 #     break
-print("Are you ready to go?")
-while True:   
-    a1 = input(">> ").lower()
-    print("*")
+# print("Are you ready to go?")
+# while True:   
+#     a1 = input(">> ").lower()
+#     print("*")
 
-    if a1.startswith('y'):
-        print("Cool, let's go.")
-        break
-    elif a1.startswith('n'):
-        print("No?")
-        time.sleep(1)
-        print("Too bad, you're a hotdog.  We're leaving.")
-        break
-    else:
-        print("I didn't understand your response.  Please type yes or no.")
+#     if a1.startswith('y'):
+#         print("Cool, let's go.")
+#         break
+#     elif a1.startswith('n'):
+#         print("No?")
+#         time.sleep(1)
+#         print("Too bad, you're a hotdog.  We're leaving.")
+#         break
+#     else:
+#         print("I didn't understand your response.  Please type yes or no.")
+#         try:
+#             a1 = input(">> ").lower()
+#             break
+#         except:
+#             want = 'yn'
+#             if a1 in want:
+#                 print("1 of 2 test print statements")
+#             else:
+#                 print("Nope, Try again...")
+
+drive_questions = ['How many blocks until we turn left?',
+                   'And then how many blocks do we go straight for?']
+miles = []
+for i in range(2):
+    print(drive_questions[i])
+    while True:
         try:
-            a1 = input(">> ").lower()
+            
+            answer = int(input(">> "))
+            miles.append(answer) 
             break
         except:
-            want = 'yn'
-            if a1 in want:
-                print("1 of 2 test print statements")
-            else:
-                print("Nope, Try again...")
+            print("Enter a number please")
+            pass              
 
   
