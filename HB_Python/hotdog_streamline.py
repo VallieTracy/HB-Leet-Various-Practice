@@ -235,11 +235,13 @@ def groceries_list():
     receipt = input(">> ").lower()
     print()
     if receipt.startswith('y'):
+        time.sleep(1)
         print("Our Shopping Receipt")
         print("____________________")
         print()
         for key in groceries:
             print(f"{key.title()}: ${groceries[key]}")
+        time.sleep(2)
             
     print()
     print("Alright, let's get outta here. Time to part-ay!") 
