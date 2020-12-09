@@ -183,7 +183,6 @@ def groceries_list():
     print("This doesn't mean we can't hear.  It just means we can't hear well.")
     print("So as we shop, I'm going to ask you to confirm every item.")
     print("One of the drawbacks of being a hotdog.")
-    print("(And why so many of us shop at Costco.)")
     print("No big deal though.  You'll just confirm with a simple yes or no!")
     print()
     time.sleep(10)

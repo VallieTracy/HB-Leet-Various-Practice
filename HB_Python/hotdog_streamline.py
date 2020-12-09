@@ -97,31 +97,26 @@ def convo(choice_1, choice_2):
         
         if a2.startswith('y'):
             time.sleep(1)
-            print("Driving a bun-mobile is like riding a bike.  Once you learn, you never forget. But I don't have time to teach you today.")
+            print("Driving a bun-mobile is like riding a bike.\nOnce you learn, you never forget.\nBut I don't have time to teach you today.")
             break
         elif a2.startswith('n'):
             time.sleep(1)
-            print("You're missing out--it's a stick shift!  There aren't enough of those these days...")
+            print("Good.  I wasn't going to let you drive anyway.")
             break
         else:
             print("Your response isn't a variation of yes or no that I understand.\nPlease try again:")
     
     return store
 
-def driving():
+def driving(an_array):
     '''Make a list of miles traveled along the route'''    
-    
     
     # Empty list to store user input for miles traveled
     miles = []
 
-    # List of driving directions questions to get input from user
-    drive_questions = ['How many blocks until we turn left?',
-                       'And then how many blocks do we go straight for?']
-    
     # Get user input to append empty miles list
-    for i in range(len(drive_questions)):
-        print(drive_questions[i])
+    for i in range(len(an_array)):
+        print(an_array[i])
         print()
         while True:
             try:
@@ -147,13 +142,158 @@ def driving():
     print(f"So it's gonna take {total_time} hours. We should have left earlier.")
     return total_time, total_miles
 
+def generic_error(question, dtype, y, z):
+    '''Generic error function which takes in input prompt, data type, and items to be replaced'''
+
+    print(question)
+    while True:
+        try:
+            user_choice = dtype(input(">> ").replace(y, z))
+            break
+        except:
+            print("Sorry, just enter a number")
+            print()
+            pass
+
+def travel_time(distance):
+    '''Returns calculations, takes list as argument'''
+    total_distance = sum(distance)
+    time_to_store = total_distance * 4
+    return total_distance, time_to_store
+
+def total_bill(some_dictionary):
+    '''Adds values of key:value pair in a dictionary and returns the total'''
+    # Initial tab of 0
+    tab = 0
+    for value in some_dictionary.values():
+        tab = tab + value
+    return tab
+
+def groceries_list():
+    '''Asks for user input and builds a dictionary'''
+
+    print("Before we delve too deep into the shopping and because you're new to the life of a hotdog...")
+    print("We're in a bit of a pickle you see.")
+    print("Because we're hotdogs, we don't have ears.")
+    print("This doesn't mean we can't hear.  It just means we can't hear well.")
+    print("So as we shop, I'm going to ask you to confirm every item.")
+    print("One of the drawbacks of being a hotdog.")
+    print("No big deal though.  You'll just confirm with a simple yes or no!")
+    print()
+    time.sleep(12)
+
+    # Set initial values
+    groceries = {}
+    done = 'no'
+    
+    # While loop to generate grocery shopping
+    while done == 'no':
+        print("What should we add to our basket?")
+        # Creates the groceries dictionary
+        a1 = input(">> ")
+        print()
+        
+        while True:
+            print(f"Confirm that you meant {a1} by typing yes or no:")
+            a2 = input(">> ").lower()
+            print()
+            if a2.startswith('y'):
+                groceries[a1] = round(random.uniform(.5, 10.5), 2)
+                break
+            elif a2.startswith('n'):
+                print("Got it.  Item won't be added!")
+                break
+            else:
+                print("Your response isn't a variation of yes or no that I understand.\nPlease try again:")
+                print()
+        
+        # Call total_bill function and store in a variable
+        total_tab = format(total_bill(groceries), '.2f')
+                        
+        # Determinant of loop closure
+        print("Are we done shopping?")
+        
+        while True:
+            done = input(">> ").lower()
+            print()
+            if done.startswith('y'):
+                done = 'yes'
+                time.sleep(1)
+                print(f"Our TOTAL TAB comes to:")
+                print(f"${total_tab}")
+                time.sleep(1)
+                print()
+                break
+            elif done.startswith('n'):
+                done = 'no'
+                break
+            else:
+                print("I didn't understand your answer.\nAre we done shopping?")
+
+    print("Would you like to see a list of what we bought and the cost breakdown?\nPlease only enter yes or no.")
+    receipt = input(">> ").lower()
+    print()
+    if receipt.startswith('y'):
+        print("Our Shopping Receipt")
+        print("____________________")
+        print()
+        for key in groceries:
+            print(f"{key.title()}: ${groceries[key]}")
+            
+    print()
+    print("Alright, let's get outta here. Time to part-ay!") 
+    print()
+    print()
+
+def party_arrival(desc_list):
+    '''---------DESCRIPTION HERE----------------'''
+
+    # Manhandled the function here instead of using the 'excitement' function in order to get it to look they way I want it
+    print("-----")
+    print("[Segue to party arrival and perusing the crowd]")
+    print("-----")
+    for i in range(10):
+        print('*')
+        time.sleep(1)
+    
+    # Prompting the user for input
+    print("Don't look now, but do you see that hotdog over there?")
+    # Starting at 0, give user 3 tries to answer 'yes'
+    i = 0
+    while True:
+        while i < 4:
+            ability = input(">> ").lower()
+            print()
+            if ability.startswith('n'):
+                if i == 3:
+                    print("Well whatever...all you need to know is that")
+                    break
+                print(f"She's the one {desc_list[i]}.")
+                print("Do you see her now?")
+                
+                i = i + 1
+                
+            elif ability.startswith('y'):
+                break
+            else:
+                print("I didn't hear you.  Say that again?")
+        break
+
+
 
 def hotdog():
     excitement(0, opening, closing, 5, period, 2)
     excitement(0, next_line, last_line, 4, space, 2)
     convo(s1l1, s2l1)
     excitement(3, e, f, 2, space, 2)
-    driving()
+    driving(drive_questions)
+    excitement(3, g, h, 1, space, 1)
+    groceries_list()
+    party_arrival(descriptions)
+    # Final four statements before program ends!
+    excitement(2, j, k, 3, space, 2)
+    excitement(1, l, m, 4, space, 2)
+    print("...THE END...")
 
 # Initial variables to be used in excitement function, welcoming the user
 opening = "Because it's 2020, guess what..."
@@ -188,6 +328,26 @@ d = 'Do you want to drive?'
 # navigation
 e = "Because you're not driving and bun-mobiles don't yet come standard-equipped with GPS, I need you to navigate."
 f = 'The map is in the glove box.'
+
+# grocery shopping
+g = f"Now that we're at the grocery store, it's time to shop!"
+h = ''
+
+# Variables for generic_error function, guessing time to party
+question1 = "Guess how many hours it'll take us to get to the party:"
+r = ','
+s = ''
+
+# List of driving directions questions to get input from user
+drive_questions = ['How many blocks until we turn left?',
+                    'And then how many blocks do we go straight for?']
+
+descriptions = ['with red hair', 'standing by the pool', 'taking a selfie']
+
+j = "Her name is Shawniece."
+k = "And she's a total bitch!"
+l = "I'll tell you all about it on our umpteen hour trip home!"
+m = "Alright, because we're good little hotdogs and listen to Governor Walz\nLet's put our masks on and party social-distance style\n...\nTime to mingle!!!!!!!!"
 
 hotdog()
 
