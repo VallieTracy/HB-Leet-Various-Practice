@@ -236,7 +236,7 @@ def groceries_list():
             else:
                 print("I didn't understand your answer.\nAre we done shopping?")
 
-    print("Would you like to see a list of what we bought and the cost breakdown?")
+    print("Would you like to see a list of what we bought and the cost breakdown?\nPlease only enter yes or no.")
     receipt = input(">> ").lower()
     if receipt.startswith('y'):
         print()
@@ -272,8 +272,10 @@ def party_arrival(desc_list):
                 
                 i = i + 1
                 
-            if ability.startswith('y'):
+            elif ability.startswith('y'):
                 break
+            else:
+                print("I didn't hear you.  Say that again?")
         break
 
     # Final four statements before program ends!
@@ -281,23 +283,23 @@ def party_arrival(desc_list):
     excitement(1, l, m, 4, space, 2)
 
 def hotdog():
-    #conversation
-    #driving_directions
+    conversation
+    driving_directions
     grocery_shopping
-    #arrival
+    arrival
     print("...THE END...")
 
 # Variables to be used in 'excitement' function
 opening = "Because it's 2020, guess what..."
 closing = "YOU'RE A HOTDOG!"
 period = '...'
-#excitement(0, opening, closing, 5, period, 2)
+excitement(0, opening, closing, 5, period, 2)
 
 # Immediately repeat 'excitement' function with new variables
 next_line = "On the upside to 2020, you're actually a very charming hotdog."
 last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY!!"
 space = ''
-#excitement(0, next_line, last_line, 4, space, 2)
+excitement(0, next_line, last_line, 4, space, 2)
 
 # Variables to store lists of various grocery stores
 stores_list1 = ['Cub Foods', 'Walmart', "Costco"]
@@ -329,7 +331,7 @@ f = 'The map is in the glove box.'
 
 # Storing information from 'convo' function into a variable
 # Needs to come above where we declare 'g' variable
-#conversation = convo()
+conversation = convo()
 
 # grocery shopping
 g = f"Now that we're at the grocery store, it's time to shop!"
@@ -350,9 +352,9 @@ m = "Alright, because we're good little hotdogs and listen to Governor Walz\nLet
 
 
 
-#driving_directions = driving()
+driving_directions = driving()
 grocery_shopping = groceries_list()
-#arrival = party_arrival(descriptions)
+arrival = party_arrival(descriptions)
 
 hotdog()
 
