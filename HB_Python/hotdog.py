@@ -177,30 +177,64 @@ def groceries_list():
     '''Asks for user input and builds a dictionary'''
 
     excitement(1, g, h, 1, space, 1)
+    print("Before we delve too deep into the shopping and because you're new to the life of a hotdog...")
+    print("We're in a bit of a pickle you see.")
+    print("Because we're hotdogs, we don't have ears.")
+    print("This doesn't mean we can't hear.  It just means we can't hear well.")
+    print("So as we shop, I'm going to ask you to confirm every item.")
+    print("One of the drawbacks of being a hotdog.")
+    print("(And why so many of us shop at Costco.)")
+    print("No big deal though.  You'll just confirm with a simple yes or no!")
+    print()
+    time.sleep(10)
 
     # Set initial values
     groceries = {}
-    shopping = 'no'
+    done = 'no'
     
     # While loop to generate grocery shopping
-    while shopping == 'no':
+    while done == 'no':
         print("What should we add to our basket?")
         # Creates the groceries dictionary
         a1 = input(">> ")
         print()
-        groceries[a1] = round(random.uniform(.5, 10.5), 2)
-
+        
+        while True:
+            print(f"Confirm that you meant {a1} by typing yes or no:")
+            a2 = input(">> ").lower()
+            print()
+            if a2.startswith('y'):
+                groceries[a1] = round(random.uniform(.5, 10.5), 2)
+                break
+            elif a2.startswith('n'):
+                print("Got it.  Item won't be added!")
+                break
+            else:
+                print("Your response isn't a variation of yes or no that I understand.\nPlease try again:")
+                print()
+        
         # Call total_bill function and store in a variable
         total_tab = format(total_bill(groceries), '.2f')
                         
         # Determinant of loop closure
-        shopping = input('Are we done shopping? ')
-        if shopping == 'yes':
+        print("Are we done shopping?")
+        
+        while True:
+            done = input(">> ").lower()
             print()
-            print(f"Our TOTAL TAB:")
-            print(f"${total_tab}")
-            print()
-            break
+            if done.startswith('y'):
+                done = 'yes'
+                time.sleep(1)
+                print(f"Our TOTAL TAB comes to:")
+                print(f"${total_tab}")
+                time.sleep(1)
+                print()
+                break
+            elif done.startswith('n'):
+                done = 'no'
+                break
+            else:
+                print("I didn't understand your answer.\nAre we done shopping?")
 
     print("Would you like to see a list of what we bought and the cost breakdown?")
     receipt = input(">> ").lower()
@@ -247,9 +281,9 @@ def party_arrival(desc_list):
     excitement(1, l, m, 4, space, 2)
 
 def hotdog():
-    conversation
+    #conversation
     #driving_directions
-    #grocery_shopping
+    grocery_shopping
     #arrival
     print("...THE END...")
 
@@ -295,7 +329,7 @@ f = 'The map is in the glove box.'
 
 # Storing information from 'convo' function into a variable
 # Needs to come above where we declare 'g' variable
-conversation = convo()
+#conversation = convo()
 
 # grocery shopping
 g = f"Now that we're at the grocery store, it's time to shop!"
@@ -316,9 +350,9 @@ m = "Alright, because we're good little hotdogs and listen to Governor Walz\nLet
 
 
 
-driving_directions = driving()
+#driving_directions = driving()
 grocery_shopping = groceries_list()
-arrival = party_arrival(descriptions)
+#arrival = party_arrival(descriptions)
 
 hotdog()
 

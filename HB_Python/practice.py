@@ -192,19 +192,139 @@ from random import choice
 #             else:
 #                 print("Nope, Try again...")
 
-drive_questions = ['How many blocks until we turn left?',
-                   'And then how many blocks do we go straight for?']
-miles = []
-for i in range(2):
-    print(drive_questions[i])
-    while True:
-        try:
+# drive_questions = ['How many blocks until we turn left?',
+#                    'And then how many blocks do we go straight for?']
+# miles = []
+# for i in range(2):
+#     print(drive_questions[i])
+#     while True:
+#         try:
             
-            answer = int(input(">> "))
-            miles.append(answer) 
-            break
-        except:
-            print("Enter a number please")
-            pass              
+#             answer = int(input(">> "))
+#             miles.append(answer) 
+#             break
+#         except:
+#             print("Enter a number please")
+#             pass              
 
+def total_bill(some_dictionary):
+    '''Adds values of key:value pair in a dictionary and returns the total'''
+    # Initial tab of 0
+    tab = 0
+    for value in some_dictionary.values():
+        tab = tab + value
+    return tab
   
+# Set initial values
+groceries = {}
+done = 'no'
+print("Before we delve too deep into the shopping and because you're new to the life of a hotdog...")
+print("We're in a bit of a pickle you see.")
+print("Because we're hotdogs, we don't have ears.")
+print("This doesn't mean we can't hear.  It just means we can't hear well.")
+print("So as we shop, I'm going to ask you to confirm every item.")
+print("One of the drawbacks of being a hotdog.")
+print("No big deal though.  You'll just confirm with a simple yes or no!")
+print()
+time.sleep(0)
+
+# While loop to generate grocery shopping
+while done == 'no':
+    print("What should we add to our basket?")
+    # Creates the groceries dictionary
+    a1 = input(">> ")
+    print()
+    
+    while True:
+        print(f"Confirm that you meant to tell me {a1} by typing yes or no:")
+        a2 = input(">> ").lower()
+        print()
+        if a2.startswith('y'):
+            print("Adding item to groceries dictionary...")
+            groceries[a1] = round(random.uniform(.5, 10.5), 2)
+            break
+        elif a2.startswith('n'):
+            print("Got it.  Item won't be added!")
+            break
+        else:
+            print("Your response isn't a variation of yes or no that I understand.\nPlease try again:")
+            
+
+    # Call total_bill function and store in a variable
+    total_tab = format(total_bill(groceries), '.2f')
+                    
+    # Determinant of loop closure
+    print("Are we done shopping?")
+    while True:
+
+        
+        done = input(">> ").lower()
+        print()
+        ok = 'yn'
+        if done.startswith('y'):
+            done = 'yes'
+            time.sleep(1)
+            print(f"Our TOTAL TAB comes to:")
+            print(f"${total_tab}")
+            time.sleep(1)
+            print()
+            break
+        elif done.startswith('n'):
+            done = 'no'
+            break
+        else:
+            print("I didn't understand your answer.\nAre we done shopping?")
+
+
+#**********************WORKS*****************
+# While loop to generate grocery shopping
+# while done == 'no':
+#     print("What should we add to our basket?")
+#     # Creates the groceries dictionary
+#     a1 = input(">> ")
+#     print()
+    
+#     while True:
+#         print(f"Confirm that you meant to tell me {a1} by typing yes or no:")
+#         a2 = input(">> ").lower()
+#         print()
+#         if a2.startswith('y'):
+#             print("Adding item to groceries dictionary...")
+#             groceries[a1] = round(random.uniform(.5, 10.5), 2)
+#             break
+#         elif a2.startswith('n'):
+#             print("Got it.  Item won't be added!")
+#             break
+#         else:
+#             print("Your response isn't a variation of yes or no that I understand.\nPlease try again:")
+            
+
+#     # Call total_bill function and store in a variable
+#     total_tab = format(total_bill(groceries), '.2f')
+                    
+#     # Determinant of loop closure
+#     print("Are we done shopping?")
+#     done = input(">> ").lower()
+#     print()
+#     if done.startswith('y'):
+#         done = 'yes'
+#         time.sleep(1)
+#         print(f"Our TOTAL TAB comes to:")
+#         print(f"${total_tab}")
+#         time.sleep(1)
+#         print()
+#         break
+        
+            
+            
+       
+        
+
+        
+
+print("Would you like to see a list of what we bought and the cost breakdown?")
+receipt = input(">> ").lower()
+if receipt.startswith('y'):
+    print()
+    for key in groceries:
+        print(f"  {key.title()}: ${groceries[key]}")
