@@ -180,7 +180,8 @@ def groceries_list():
     print("One of the drawbacks of being a hotdog.")
     print("No big deal though.  You'll just confirm with a simple yes or no!")
     print()
-    time.sleep(12)
+    time.sleep(12
+    )
 
     # Set initial values
     groceries = {}

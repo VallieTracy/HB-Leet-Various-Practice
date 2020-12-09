@@ -273,25 +273,53 @@ from random import choice
 #     for key in groceries:
 #         print(f"  {key.title()}: ${groceries[key]}")
 
-descriptions = ['with red hair', 'standing by the pool', 'taking a selfie']
-# Prompting the user for input
-print("Don't look now, but do you see that hotdog over there?")
-# Starting at 0, give user 3 tries to answer 'yes'
-i = 0
-while True:
-    while i < 4:
-        ability = input(">> ").lower()
-        if ability.startswith('n'):
-            if i == 3:
-                print("Well whatever...all you need to know is that")
-                break
-            print(f"She's the one {descriptions[i]}.")
-            print("Do you see her now?")
+# descriptions = ['with red hair', 'standing by the pool', 'taking a selfie']
+# # Prompting the user for input
+# print("Don't look now, but do you see that hotdog over there?")
+# # Starting at 0, give user 3 tries to answer 'yes'
+# i = 0
+# while True:
+#     while i < 4:
+#         ability = input(">> ").lower()
+#         if ability.startswith('n'):
+#             if i == 3:
+#                 print("Well whatever...all you need to know is that")
+#                 break
+#             print(f"She's the one {descriptions[i]}.")
+#             print("Do you see her now?")
             
-            i = i + 1
+#             i = i + 1
             
-        elif ability.startswith('y'):
+#         elif ability.startswith('y'):
+#             break
+#         else:
+#             print("I didn't hear you. Say that again?")
+#     break
+
+def error_loop(question, ltr_a, print_a, ltr_b, print_b1, print_b2, print_c):
+    print(question)
+    while True:
+        a1 = input(">> ").lower()
+        print()
+
+        if a1.startswith(ltr_a.lower()):
+            print(print_a)
+            break
+        elif a1.startswith(ltr_b.lower()):
+            print(print_b1)
+            time.sleep(1)
+            print(print_b2)
             break
         else:
-            print("I didn't hear you. Say that again?")
-    break
+            print(print_c)
+ 
+        
+q = 'Do you want to drive?'
+a = 'y'
+sent_a = 'I do not have time to teach you.  Sorry.'
+b = 'n'
+sent_b1 = ''
+sent_b2 = 'I was not going to let you drive anayway.'
+sent_c = 'I do not understand.  Try again.'
+
+error_loop(q,a,sent_a,b, sent_b1,sent_b2,sent_c)
