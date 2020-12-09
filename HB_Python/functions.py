@@ -39,6 +39,23 @@ def wrong_input(user_choice, some_letters, more_letters):
     else:
       print("That grocery store isn't in the list.  Try again...")
 
+def error_loop(opening_question, ltr_a, print_a, ltr_b, print_b1, print_b2, print_c):
+    print(opening_question)
+    while True:
+        a1 = input(">> ").lower()
+        print()
+
+        if a1.startswith(ltr_a):
+            print(print_a)
+            break
+        elif a1.startswith(ltr_b):
+            print(print_b1)
+            time.sleep(1)
+            print(print_b2)
+            break
+        else:
+            print(print_c)   
+
 def convo(choice_1, choice_2):
     '''A function that talks with the user based on user input'''
 
@@ -180,8 +197,7 @@ def groceries_list():
     print("One of the drawbacks of being a hotdog.")
     print("No big deal though.  You'll just confirm with a simple yes or no!")
     print()
-    time.sleep(12
-    )
+    time.sleep(0)
 
     # Set initial values
     groceries = {}

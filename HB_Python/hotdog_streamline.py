@@ -104,7 +104,7 @@ def convo(choice_1, choice_2):
             print("Good.  I wasn't going to let you drive anyway.")
             break
         else:
-            print("Your response isn't a variation of yes or no that I understand.\nPlease try again:")
+            print("I didn't catch that. Did you want to drive?:")
     
     return store
 
@@ -120,7 +120,7 @@ def driving(an_array):
         print()
         while True:
             try:
-                answer = int(input(">> "))
+                answer = int(input(">> ").replace(',', ''))
                 miles.append(answer)
                 break
             except:

@@ -296,8 +296,8 @@ from random import choice
 #             print("I didn't hear you. Say that again?")
 #     break
 
-def error_loop(question, ltr_a, print_a, ltr_b, print_b1, print_b2, print_c):
-    print(question)
+def error_loop(opening_question, ltr_a, print_a, ltr_b, print_b1, print_b2, print_c):
+    print(opening_question)
     while True:
         a1 = input(">> ").lower()
         print()
@@ -323,3 +323,4 @@ sent_b2 = 'I was not going to let you drive anayway.'
 sent_c = 'I do not understand.  Try again.'
 
 error_loop(q,a,sent_a,b, sent_b1,sent_b2,sent_c)
+
