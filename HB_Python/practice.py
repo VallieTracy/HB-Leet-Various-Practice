@@ -296,31 +296,46 @@ from random import choice
 #             print("I didn't hear you. Say that again?")
 #     break
 
-def error_loop(opening_question, ltr_a, print_a, ltr_b, print_b1, print_b2, print_c):
-    print(opening_question)
-    while True:
-        a1 = input(">> ").lower()
-        print()
+# def error_loop(opening_question, ltr_a, print_a, ltr_b, print_b1, print_b2, print_c):
+#     print(opening_question)
+#     while True:
+#         a1 = input(">> ").lower()
+#         print()
 
-        if a1.startswith(ltr_a.lower()):
-            print(print_a)
-            break
-        elif a1.startswith(ltr_b.lower()):
-            print(print_b1)
-            time.sleep(1)
-            print(print_b2)
-            break
-        else:
-            print(print_c)
+#         if a1.startswith(ltr_a.lower()):
+#             print(print_a)
+#             break
+#         elif a1.startswith(ltr_b.lower()):
+#             print(print_b1)
+#             time.sleep(1)
+#             print(print_b2)
+#             break
+#         else:
+#             print(print_c)
  
         
-q = 'Do you want to drive?'
-a = 'y'
-sent_a = 'I do not have time to teach you.  Sorry.'
-b = 'n'
-sent_b1 = ''
-sent_b2 = 'I was not going to let you drive anayway.'
-sent_c = 'I do not understand.  Try again.'
+# q = 'Do you want to drive?'
+# a = 'y'
+# sent_a = 'I do not have time to teach you.  Sorry.'
+# b = 'n'
+# sent_b1 = ''
+# sent_b2 = 'I was not going to let you drive anayway.'
+# sent_c = 'I do not understand.  Try again.'
 
-error_loop(q,a,sent_a,b, sent_b1,sent_b2,sent_c)
+# error_loop(q,a,sent_a,b, sent_b1,sent_b2,sent_c)
 
+test = "jerry's"
+print(test.title())
+
+import string
+print(string.capwords(test))
+print("testing:")
+print(test.capwords())
+
+ears = ["Before we delve too deep into the shopping and because you're new to the life of a hotdog...",
+        "We're in a bit of a pickle you see.",
+        "Because we're hotdogs, we don't have ears.",
+        "This doesn't mean we can't hear.  It just means we can't hear well.",
+        "So as we shop, I'm going to ask you to confirm every item.",
+        "One of the drawbacks of being a hotdog.",
+        "No big deal though.  You'll just confirm with a simple yes or no!"]

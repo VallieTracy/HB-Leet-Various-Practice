@@ -2,6 +2,7 @@
 import random
 import time
 from random import choice
+import string
 
 def excitement(front_lapse, sent1, sent2, time_lapse, symbol, end_lapse):
     '''Adds time delay between sentences'''
@@ -32,8 +33,8 @@ def choose_2_stores(list1, list2):
 def wrong_input(user_choice, some_letters, more_letters): 
     '''Combine two strings, check to see if 'user_choice' is in that combination, and then print based on if/else'''
     
-    groc_letters = some_letters + more_letters
-    groc_letters = groc_letters.replace("&",'').replace("'", '').lower()
+    groc_letters = (some_letters + more_letters).lower()
+    
     if user_choice in groc_letters:
         print(f"I think you meant either {some_letters} or {more_letters}.\nPlease verify by typing it again below.")
     else:
@@ -43,7 +44,7 @@ def convo(choice_1, choice_2):
     '''A function that talks with the user based on user input'''
 
     # Ask question in order to get input below, then a while loop
-    print(f"We need to go to the grocery store before we head over to the party.  Do you prefer {s1.title()} or {s2.title()}?")
+    print(f"We need to go to the grocery store before we head over to the party.  Do you prefer {string.capwords(s1)} or {string.capwords(s2)}?")
 
     # While loop
     while True:
@@ -142,6 +143,7 @@ def driving(an_array):
     print(f"So it's gonna take {total_time} hours. We should have left earlier.")
     return total_time, total_miles
 
+
 def generic_error(question, dtype, y, z):
     '''Generic error function which takes in input prompt, data type, and items to be replaced'''
 
@@ -169,25 +171,21 @@ def total_bill(some_dictionary):
         tab = tab + value
     return tab
 
-def groceries_list():
+def groceries_list(arr):
     '''Asks for user input and builds a dictionary'''
+    '''Also takes an array as an argument; in this case it prints 7 questions with timesleep between each one'''
 
-    print("Before we delve too deep into the shopping and because you're new to the life of a hotdog...")
-    print("We're in a bit of a pickle you see.")
-    print("Because we're hotdogs, we don't have ears.")
-    print("This doesn't mean we can't hear.  It just means we can't hear well.")
-    print("So as we shop, I'm going to ask you to confirm every item.")
-    print("One of the drawbacks of being a hotdog.")
-    print("No big deal though.  You'll just confirm with a simple yes or no!")
+    for i in range(len(arr)):
+        print(arr[i])
+        time.sleep(1)
     print()
-    time.sleep(12
-    )
+    time.sleep(6)
 
     # Set initial values
     groceries = {}
     done = 'no'
     
-    # While loop to generate grocery shopping
+    # While loop to generate grocery shopping until user input says to stop
     while done == 'no':
         print("What should we add to our basket?")
         # Creates the groceries dictionary
@@ -241,7 +239,7 @@ def groceries_list():
         print()
         for key in groceries:
             print(f"{key.title()}: ${groceries[key]}")
-        time.sleep(2)
+        time.sleep(3)
             
     print()
     print("Alright, let's get outta here. Time to part-ay!") 
@@ -253,7 +251,7 @@ def party_arrival(desc_list):
 
     # Manhandled the function here instead of using the 'excitement' function in order to get it to look they way I want it
     print("-----")
-    print("[Segue to party arrival and perusing the crowd]")
+    print("[Segue to party arrival and scanning the crowd]")
     print("-----")
     for i in range(10):
         print('*')
@@ -269,7 +267,7 @@ def party_arrival(desc_list):
             print()
             if ability.startswith('n'):
                 if i == 3:
-                    print("Well whatever...all you need to know is that")
+                    print("No worries amigo...all you need to know...")
                     break
                 print(f"She's the one {desc_list[i]}.")
                 print("Do you see her now?")
@@ -282,21 +280,19 @@ def party_arrival(desc_list):
                 print("I didn't hear you.  Say that again?")
         break
 
-
-
 def hotdog():
     excitement(0, opening, closing, 5, period, 2)
     excitement(0, next_line, last_line, 4, space, 2)
     convo(s1l1, s2l1)
     excitement(3, e, f, 2, space, 2)
     driving(drive_questions)
-    excitement(3, g, h, 1, space, 1)
-    groceries_list()
+    excitement(4, g, h, 1, space, 1)
+    groceries_list(ears)
     party_arrival(descriptions)
     # Final four statements before program ends!
-    excitement(2, j, k, 3, space, 2)
+    excitement(2, j, k, 1, space, 2)
     excitement(1, l, m, 4, space, 2)
-    print("...THE END...")
+    excitement(1, n, o, 4, space, 0)
 
 # Initial variables to be used in excitement function, welcoming the user
 opening = "Because it's 2020, guess what..."
@@ -307,8 +303,8 @@ last_line = "Which means you have lots of friends...\nAND A PARTY TO GO TO!\nYAY
 space = ''
 
 # Variables to store lists of various grocery stores
-stores_list1 = ['Cub Foods', 'Walmart', "Costco"]
-stores_list2 = ['Whole Foods', "Lunds & Byerlys", 'Kowalskis']
+stores_list1 = ['Cub Foods', 'Hyvee', "Costco"]
+stores_list2 = ["Jerry's", "Lunds & Byerly's", "Kowalski's"]
 
 # Variables to store what was returned in the 'choose_2_stores' function
 # Returns a 4-item tuple: random first store, random second store, first letter of first store, first letter of second store
@@ -333,8 +329,17 @@ e = "Because you're not driving and bun-mobiles don't yet come standard-equipped
 f = 'The map is in the glove box.'
 
 # grocery shopping
-g = f"Now that we're at the grocery store, it's time to shop!"
+g = "Now that we're at the grocery store, it's time to shop!"
 h = ''
+
+# list of statements for 'groceries_list' function to start
+ears = ["Before we delve too deep into the shopping and because you're new to the life of a hotdog...",
+        "We're in a bit of a pickle you see.",
+        "Because we're hotdogs, we don't have ears.",
+        "This doesn't mean we can't hear.  It just means we can't hear well.",
+        "So as we shop, I'm going to ask you to confirm every item.",
+        "One of the drawbacks of being a hotdog.",
+        "No big deal though.  You'll just confirm with a simple yes or no!"]
 
 # Variables for generic_error function, guessing time to party
 question1 = "Guess how many hours it'll take us to get to the party:"
@@ -348,9 +353,12 @@ drive_questions = ['How many blocks until we turn left?',
 descriptions = ['with red hair', 'standing by the pool', 'taking a selfie']
 
 j = "Her name is Shawniece."
-k = "And she's a total bitch!"
-l = "I'll tell you all about it on our umpteen hour trip home!"
-m = "Alright, because we're good little hotdogs and listen to Governor Walz\nLet's put our masks on and party social-distance style\n...\nTime to mingle!!!!!!!!"
+k = "And she's a total slore."
+l = "I'll tell you all about it on the ride home!"
+m = "Alright, because we're good little hotdogs and listen to Governor Walz\nLet's put our masks on and party, social-distance style!"
+
+n = "Time to mingle!!!!!"
+o = "...THE END..."
 
 hotdog()
 
