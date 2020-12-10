@@ -324,18 +324,19 @@ from random import choice
 
 # error_loop(q,a,sent_a,b, sent_b1,sent_b2,sent_c)
 
-test = "jerry's"
-print(test.title())
+# test = "jerry's"
+# print(test.title())
 
-import string
-print(string.capwords(test))
-print("testing:")
-print(test.capwords())
+# import string
+# print(string.capwords(test))
+# print("testing:")
+# print(test.capwords())
 
-ears = ["Before we delve too deep into the shopping and because you're new to the life of a hotdog...",
-        "We're in a bit of a pickle you see.",
-        "Because we're hotdogs, we don't have ears.",
-        "This doesn't mean we can't hear.  It just means we can't hear well.",
-        "So as we shop, I'm going to ask you to confirm every item.",
-        "One of the drawbacks of being a hotdog.",
-        "No big deal though.  You'll just confirm with a simple yes or no!"]
+# ears = ["Before we delve too deep into the shopping and because you're new to the life of a hotdog...",
+#         "We're in a bit of a pickle you see.",
+#         "Because we're hotdogs, we don't have ears.",
+#         "This doesn't mean we can't hear.  It just means we can't hear well.",
+#         "So as we shop, I'm going to ask you to confirm every item.",
+#         "One of the drawbacks of being a hotdog.",
+#         "No big deal though.  You'll just confirm with a simple yes or no!"]
+
