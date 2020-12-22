@@ -14,13 +14,29 @@
 
 # print(maskify(password))
 
-def get_count(input_str):
-    num_vowels = 0
-    vowels = 'aeiou'
-    for i in range(len(input_str)):
-        if input_str[i] in vowels:
-            num_vowels += 1
+# def get_count(input_str):
+#     num_vowels = 0
+#     vowels = 'aeiou'
+#     for i in range(len(input_str)):
+#         if input_str[i] in vowels:
+#             num_vowels += 1
     
-    return num_vowels
+#     return num_vowels
 
-print(get_count("hi vallie ee"))
+# print(get_count("hi vallie ee"))
+
+nums = [1, 2, 2, 6, 8, 7, 4]
+
+def sum67(numbers):
+    new_list = []
+    for number in numbers:
+        if number == 6:
+            numbers.remove(number)
+    return numbers
+
+
+
+# total = sum67(nums)
+# print(f"SUM: {total}")
+print(sum67(nums))
+
