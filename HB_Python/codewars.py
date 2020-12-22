@@ -25,18 +25,20 @@
 
 # print(get_count("hi vallie ee"))
 
-nums = [1, 2, 2, 6, 8, 7, 4]
+nums = [1, 2, 2, 6, 8, 7, 4, -3, 0, 1, 1]
 
 def sum67(numbers):
-    new_list = []
-    for number in numbers:
-        if number == 6:
-            numbers.remove(number)
-    return numbers
+
+    idx6 = numbers.index(6)
+    idx7 = numbers.index(7)
+    del(numbers[idx6:idx7+1])
+    print(numbers)
+    return sum(numbers)
+
+total = sum67(nums)
+print(f"TOTAL SUM: {total}")
 
 
 
-# total = sum67(nums)
-# print(f"SUM: {total}")
-print(sum67(nums))
+
 
