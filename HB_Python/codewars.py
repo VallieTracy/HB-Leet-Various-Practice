@@ -25,18 +25,31 @@
 
 # print(get_count("hi vallie ee"))
 
-nums = [1, 2, 2, 6, 8, 7, 4, -3, 0, 1, 1]
+# nums = [1,2,6,7,3,6,8,7,1]
 
-def sum67(numbers):
+# def sum67(numbers):
+#     while 6 in numbers:
+#         idx6 = numbers.index(6)
+#         idx7 = numbers.index(7)
+#         del(numbers[idx6:idx7+1])
+#     return sum(numbers)
 
-    idx6 = numbers.index(6)
-    idx7 = numbers.index(7)
-    del(numbers[idx6:idx7+1])
-    print(numbers)
-    return sum(numbers)
+# total = sum67(nums)
+# print(f"TOTAL SUM: {total}")
 
-total = sum67(nums)
-print(f"TOTAL SUM: {total}")
+my_list = [1, 3, 2, 2]
+
+def has22(arr):
+    for i in range(len(arr)-1):
+        while True:
+            if arr[i] == 2 and arr[i+1] == 2:
+                return True
+                break
+            else:
+                return False
+                break
+
+print(has22(my_list))
 
 
 
