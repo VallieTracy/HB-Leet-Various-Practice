@@ -1,63 +1,82 @@
-# my_list = [1, 2, 4, 6]
+# my_nums = [1, 2, 2]
 
-# def evens(some_param):
+# def count_evens(nums):
+#     evens = 0
+#     for num in nums:
+#         if num %  2 == 0:
+#             evens += 1
+#     return evens
+
+# print(count_evens(my_nums))
+
+# my_nums = [10]
+
+# def big_diff(nums):
+#     big = max(nums)
+#     small = min(nums)
+#     return big - small
+
+# print(big_diff(my_nums))
+
+#my_nums = [1, 2, 10, 4, 10, -1, -1]
+# lrg = max(my_nums)
+# sml = min(my_nums)
+# print(my_nums)
+# my_nums.remove(lrg, sml)
+# print(my_nums)
+
+# def centered_average(nums):
+#     lrg = max(nums)
+#     nums.remove(lrg)
+#     sml = min(nums)
+#     nums.remove(sml)
+#     total = sum(nums)
+#     ca = int(total / (len(nums)))
+#     return ca
+
+# print(centered_average(my_nums))
+
+my_nums = [1, 2, 13, 4, 6, 6, 13, 13]
+
+# def sum13(nums):
 #     count = 0
-#     for param in some_param:
-#         if param % 2 == 0:
-#             count += 1
-#     return count
+#     i = 0
+#     while i <= len(nums):
+#         if nums[i] != 13:
+#             print(f"i: {i}")
+#             count = count + nums[i]
+#             i = i + 1
+#             print(f"COUNT: {count}")
+#             print(f"i = i + 1: {i}")
+#             print("-----------------")
+#         elif nums[i] in nums[-2:] and nums[i] == 13:
+#             print("clueless")
+#             break
+#         elif nums[i] == 13:
+#             print(f"i: {i}")
+#             i = i + 2
+#             print(f"COUNT: {count}")
+#             print(f"i = i+2: {i}")
+#             print("--------------")
 
-# out = evens(my_list)
-# print(f"'my_list' contains {out} even numbers.")
+            
+        
 
-# my_list = []
+    # return count
 
-# def big_diff(some_param):
-#     if len(some_param) >= 1:
-#         lg = max(some_param)
-#         sm = min(some_param)
-#         return lg - sm
-#     else:
-#         print("empty list")
+def sum13(nums):
+    count = 0
+    i = 0
+    while i <= len(nums):
+        if nums[i] in nums[-2:]:
+            count = count + nums[i]
+            i = i + 1
+            print(f"COUNT: {count}")
+            print(f"i = i + 1: {i}")
+            print("-----------------")
+        
 
-# print(big_diff(my_list))
+print(sum13(my_nums))
 
-my_list = [1, 2, 4, 5, 5, 6]
-# others = []
-# sm = min(my_list)
-# lg = max(my_list)
-# for i in range(len(my_list)):
-#     if my_list[i] != lg and my_list[i] != sm:
-#         others.append(my_list[i])
-
-# print(others)
-
-# def centered_average(param):
-#     others = []
-#     sm = min(param)
-#     lg = max(param)
-
-#     for i in range(len(param)):
-#         if param[i] != sm and param[i] != lg and not param[i] in others:
-#             others.append(param[i])
-   
-#     for j in range(len(others)):
-#         average = sum(others) / len(others)
-
-#     return average
-
-# print(centered_average(my_list))
-
-my_list = [1, 2, 2, 1, 1, 13]
-
-def sum13(numbers):
-    if not 13 in numbers:
-        total = sum(numbers)
-    else:
-        total = 0
-        for i in range(len(numbers)):
-            total = total + numbers[i]
-    return total
-print(sum13(my_list))
 
 

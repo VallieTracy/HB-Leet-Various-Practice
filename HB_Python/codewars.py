@@ -37,19 +37,27 @@
 # total = sum67(nums)
 # print(f"TOTAL SUM: {total}")
 
-my_list = [1, 3, 2, 2]
+my_list = [2, 2, 2]
+
+# def has22(arr):
+#     for i in range(len(arr)-1):
+#         if arr[i] == 2 and arr[i+1] == 2:
+#             return True
+#         else:
+#             return False
 
 def has22(arr):
-    for i in range(len(arr)-1):
-        while True:
+    while False:
+        for i in range(len(arr)-1):
             if arr[i] == 2 and arr[i+1] == 2:
-                return True
-                break
-            else:
-                return False
-                break
-
-print(has22(my_list))
+                print(arr[i])
+                print(arr[i+1])
+                
+        else:
+            return False
+       
+answer = has22(my_list)
+print(f"ANSWER = {answer}")
 
 
 
