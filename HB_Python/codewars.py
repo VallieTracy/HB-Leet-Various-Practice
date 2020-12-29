@@ -10,6 +10,11 @@
 # result = is_isogram(my_str)
 # print(result)
 
+number = 34
+
+print(number[0])
+
+
 
 
 
