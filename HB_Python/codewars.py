@@ -48,11 +48,43 @@
  
 # print(quarter_of(13))
 
-def count_sheep(n):
-    repeat = " sheep..."
-    return f"{n}{repeat}{n-1}{repeat}{n-2}{repeat}"
+# def count_sheep(n):
+#     repeat = " sheep..."
+#     sheep_list = "" 
+#     return f"{n}{repeat}{n-1}{repeat}{n-2}{repeat}"
 
-print(count_sheep(5))
+# print(count_sheep(5))
+
+# def sheep_test(n):
+#     sleep = ""
+#     sheep_list = []
+#     for i in range(1, n+1):
+#         sheep_list.append(f"{i} sheep...")
+#     return sleep.join(sheep_list)
+
+# print(sheep_test(3))
+
+
+param = input("What is your profession? ")
+
+def get_drink_by_profession(param):
+    param = param.lower()
+    if param == 'jabroni':
+        return "Patron Tequila"
+    elif param == 'school counselor':
+        return "Anything with Alcohol"
+    elif param == 'programmer':
+        return "Hipster Craft Beer"
+    elif param == "bike gang member":
+        return "Moonshine"
+    elif param == 'politician':
+        return "Your tax dollars"
+    elif param == 'rapper':
+        return "Cristal"
+    else:
+        return "Beer"
+
+print(get_drink_by_profession(param))
 
 
 
