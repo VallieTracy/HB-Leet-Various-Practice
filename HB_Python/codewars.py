@@ -65,27 +65,40 @@
 # print(sheep_test(3))
 
 
-param = input("What is your profession? ")
+# param = input("What is your profession? ")
 
-def get_drink_by_profession(param):
-    param = param.lower()
-    if param == 'jabroni':
-        return "Patron Tequila"
-    elif param == 'school counselor':
-        return "Anything with Alcohol"
-    elif param == 'programmer':
-        return "Hipster Craft Beer"
-    elif param == "bike gang member":
-        return "Moonshine"
-    elif param == 'politician':
-        return "Your tax dollars"
-    elif param == 'rapper':
-        return "Cristal"
-    else:
-        return "Beer"
+# def get_drink_by_profession(param):
+#     param = param.lower()
+#     if param == 'jabroni':
+#         return "Patron Tequila"
+#     elif param == 'school counselor':
+#         return "Anything with Alcohol"
+#     elif param == 'programmer':
+#         return "Hipster Craft Beer"
+#     elif param == "bike gang member":
+#         return "Moonshine"
+#     elif param == 'politician':
+#         return "Your tax dollars"
+#     elif param == 'rapper':
+#         return "Cristal"
+#     else:
+#         return "Beer"
 
-print(get_drink_by_profession(param))
+# print(get_drink_by_profession(param))
 
+def cube_sum(n, m):
+    init = min(n, m)
+    end = max(n, m)
+    num_list = list(range(init+1, end+1))
+    sum = 0
+    for number in num_list:
+        cube = number**3
+        sum = sum + cube
+    return sum
+
+
+
+print(cube_sum(1, 2))
 
 
 
