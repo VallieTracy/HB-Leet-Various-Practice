@@ -86,19 +86,27 @@
 
 # print(get_drink_by_profession(param))
 
-def cube_sum(n, m):
-    init = min(n, m)
-    end = max(n, m)
-    num_list = list(range(init+1, end+1))
-    sum = 0
-    for number in num_list:
-        cube = number**3
-        sum = sum + cube
-    return sum
+# def cube_sum(n, m):
+#     init = min(n, m)
+#     end = max(n, m)
+#     num_list = list(range(init+1, end+1))
+#     sum = 0
+#     for number in num_list:
+#         cube = number**3
+#         sum = sum + cube
+#     return sum
 
+# print(cube_sum(1, 2))
 
+def digital_root(n):
+    #digits = [int(x) for x in str(n)]
+    for digit in n:
+        print(type(digit))
+        print(f"DIGIT: {digit}")
 
-print(cube_sum(1, 2))
+    
+
+print(digital_root(123))
 
 
 
