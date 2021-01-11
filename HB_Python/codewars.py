@@ -98,15 +98,27 @@
 
 # print(cube_sum(1, 2))
 
-def digital_root(n):
-    #digits = [int(x) for x in str(n)]
-    for digit in n:
-        print(type(digit))
-        print(f"DIGIT: {digit}")
+# def digital_root(n):
+#     #digits = [int(x) for x in str(n)]
+#     digits = [int(digit) for digit in str(n)]
+#     return digits
 
     
 
-print(digital_root(123))
+# print(digital_root(123))
+
+def is_square(n):    
+    i = 1
+    while i < n:
+        if i**2 == n:
+            return True
+        
+        else:
+            print("False")
+            
+
+
+print(is_square(8))
 
 
 
