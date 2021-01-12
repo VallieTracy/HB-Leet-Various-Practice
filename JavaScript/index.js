@@ -14,18 +14,21 @@ var movieScores = [
     6.9
   ];
   
-  // Starting a rating count
-  var sum = 0;
-  
-  // Arrays to hold movie scores
-  var goodMovieScores = [];
-  var okMovieScores = [];
-  var badMovieScores = [];
-  
-for (var i = 0; i < movieScores.length; i++) {
-  if (movieScores[i] > 7) {
-    goodMovieScores.push(movieScores[i]);
+function testFunction(aList) {
+  for (i = 0; i < aList.length; i++) {
+    console.log(aList[i]);
   }
 }
 
-console.log(goodMovieScores);
+testFunction(movieScores);
+
+function movieMean(aList) {
+  var sum = 0;
+  for (i = 0; i < aList.length; i++) {
+    sum = sum + aList[i];
+  }
+  var movieAvg = sum / (aList.length);
+  return movieAvg;
+}
+
+console.log(movieMean(movieScores));
