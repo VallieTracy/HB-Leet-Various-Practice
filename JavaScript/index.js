@@ -21,4 +21,11 @@ var movieScores = [
   var goodMovieScores = [];
   var okMovieScores = [];
   var badMovieScores = [];
-  console.log(`hi`);
+  
+for (var i = 0; i < movieScores.length; i++) {
+  if (movieScores[i] > 7) {
+    goodMovieScores.push(movieScores[i]);
+  }
+}
+
+console.log(goodMovieScores);
