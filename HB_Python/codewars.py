@@ -107,18 +107,28 @@
 
 # print(digital_root(123))
 
-def is_square(n):    
-    i = 1
-    while i < n:
-        if i**2 == n:
-            return True
-        
-        else:
-            print("False")
-            
+# def is_square(n):
+#     if n < 0:
+#         return False 
+    
+#     i = 0
+#     while i <= n:
+#         if i**2 == n:
+#             return True
+#             break
+#         else:
+#             if i == n-1:
+#                 if i**2 != n:
+#                     return False
+#             i += 1
 
+# def is_square(n):
+#     if n >= 0:
+#         return n**.5 == int(n**.5)
+#     else:
+#         return False
 
-print(is_square(8))
+# print(is_square(-10))
 
 
 
