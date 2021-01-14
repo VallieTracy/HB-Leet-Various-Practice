@@ -130,20 +130,27 @@
 
 # print(is_square(-10))
 
-my_nums = "4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"
+# my_nums = "4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"
 
 
-def high_and_low(numbers):
-    num_array = numbers.split()
-    str_int = [int(i) for i in num_array]
-    sml = min(str_int)
-    bg = max(str_int)
-    return f'"{bg} {sml}"'
+# def high_and_low(numbers):
+#     num_array = numbers.split()
+#     str_int = [int(i) for i in num_array]
+#     sml = min(str_int)
+#     bg = max(str_int)
+#     return f'"{bg} {sml}"'
     
 
-print(high_and_low(my_nums))
+# print(high_and_low(my_nums))
 
+my_names = [ {'name': 'Bart'}, {'name': 'Lisa'}, {'name': 'Maggie'} ]
 
+def namelist(names):
+    for name_dict in my_names:
+        for name in name_dict:
+            print(name_dict[name])
+
+namelist(my_names)
 
 
 
