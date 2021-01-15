@@ -1,29 +1,31 @@
-// Array of movie ratings
-var movieScores = [
-    4.4,
-    3.3,
-    5.9,
-    8.8,
-    1.2,
-    5.2,
-    7.4,
-    7.5,
-    7.2,
-    9.7,
-    4.2,
-    6.9
-  ];
-  
-function scoresList(arr) {
-  console.log(arr);
+var my_string = "I yam what I yam therefore I yam";
+
+function word_counting(a_str) {
+  str_arr = a_str.split(" ");
+  word_obj = {};
+
+  for (i = 0; i < str_arr.length; i++) {
+    var currentWord = str_arr[i];
+    if (currentWord in word_obj) {
+      word_obj[currentWord] += 1;
+    }
+    else {
+      word_obj[currentWord] = 1;
+    }
+  }
+
+  return word_obj;
+
 }
 
-scoresList(movieScores);
+console.log(word_counting(my_string));
 
-console.log("Using a FOR LOOP:");
-for (i = 0; i < movieScores.length; i++) {
-  scoresList(movieScores[i]);
-}
+var people = {
+  mom: "wilma flintstone",
+  dad: "fred flintstone",
+  daughter: "pebbles",
+  son: "bambam"
+};
 
-console.log("Using FOR EACH:");
-movieScores.forEach(scoresList);
+console.log(Object.entries(people));
+
