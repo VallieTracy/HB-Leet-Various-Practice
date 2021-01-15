@@ -14,21 +14,16 @@ var movieScores = [
     6.9
   ];
   
-function testFunction(aList) {
-  for (i = 0; i < aList.length; i++) {
-    console.log(aList[i]);
-  }
+function scoresList(arr) {
+  console.log(arr);
 }
 
-testFunction(movieScores);
+scoresList(movieScores);
 
-function movieMean(aList) {
-  var sum = 0;
-  for (i = 0; i < aList.length; i++) {
-    sum = sum + aList[i];
-  }
-  var movieAvg = sum / (aList.length);
-  return movieAvg;
+console.log("Using a FOR LOOP:");
+for (i = 0; i < movieScores.length; i++) {
+  scoresList(movieScores[i]);
 }
 
-console.log(movieMean(movieScores));
+console.log("Using FOR EACH:");
+movieScores.forEach(scoresList);
