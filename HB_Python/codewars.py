@@ -143,14 +143,25 @@
 
 # print(high_and_low(my_nums))
 
-my_names = [ {'name': 'Bart'}, {'name': 'Lisa'}, {'name': 'Maggie'} ]
+my_names = [ {'name': 'Bart'}, {'name': 'Lisa'} ]#, {'name': 'Maggie'} ]
+print(len(my_names))
 
-def namelist(names):
-    for name_dict in my_names:
-        for name in name_dict:
-            print(name_dict[name])
+# def namelist(names):
+#     names_list = []
+#     names_string = ""
 
-namelist(my_names)
+#     for name_dict in my_names:
+#         for name in name_dict:
+#             names_list.append(f"{name_dict[name]}, ")
+#     return names_string.join(names_list)
+
+# print(namelist(my_names))
+
+def nameslist(names):
+    for key, value in names:
+        print(f"KEY: {key}, VALUE: {value}")
+
+nameslist(my_names)
 
 
 
