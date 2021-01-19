@@ -143,8 +143,18 @@
 
 # print(high_and_low(my_nums))
 
-my_names = [ {'name': 'Bart'}, {'name': 'Lisa'} ]#, {'name': 'Maggie'} ]
-print(len(my_names))
+my_names = [ {'name': 'Bart'}, {'name': 'Lisa'}, {'name': 'Maggie'} ]
+
+def namelist(names):
+    people = []
+    for i in range(len(names)):
+        ind_dict = names[i]
+        for name in ind_dict:
+            person = ind_dict[name]
+            people.append(person)
+    return people
+
+print(namelist(my_names))
 
 # def namelist(names):
 #     names_list = []
@@ -157,11 +167,22 @@ print(len(my_names))
 
 # print(namelist(my_names))
 
-def nameslist(names):
-    for key, value in names:
-        print(f"KEY: {key}, VALUE: {value}")
+# def nameslist(names):
+#     for key, value in names:
+#         print(f"KEY: {key}, VALUE: {value}")
 
-nameslist(my_names)
+# nameslist(my_names)
+
+dataList = [{'a': 1}, {'b': 3}, {'c': 5}]
+for index in range(len(dataList)):
+    for key in dataList[index]:
+        print(dataList[index][key])
+
+for i in range(len(dataList)):
+    ind_dict = dataList[i]
+    for poop in ind_dict:
+        value = ind_dict[poop]
+        print(f"KEY: {poop}  VALUE: {value}")
 
 
 
