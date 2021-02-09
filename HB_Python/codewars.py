@@ -143,18 +143,18 @@
 
 # print(high_and_low(my_nums))
 
-my_names = [ {'name': 'Bart'}, {'name': 'Lisa'}, {'name': 'Maggie'} ]
+# my_names = [ {'name': 'Bart'}, {'name': 'Lisa'}, {'name': 'Maggie'} ]
 
-def namelist(names):
-    people = []
-    for i in range(len(names)):
-        ind_dict = names[i]
-        for name in ind_dict:
-            person = ind_dict[name]
-            people.append(person)
-    return people
+# def namelist(names):
+#     people = []
+#     for i in range(len(names)):
+#         ind_dict = names[i]
+#         for name in ind_dict:
+#             person = ind_dict[name]
+#             people.append(person)
+#     return people
 
-print(namelist(my_names))
+# print(namelist(my_names))
 
 # def namelist(names):
 #     names_list = []
@@ -173,16 +173,31 @@ print(namelist(my_names))
 
 # nameslist(my_names)
 
-dataList = [{'a': 1}, {'b': 3}, {'c': 5}]
-for index in range(len(dataList)):
-    for key in dataList[index]:
-        print(dataList[index][key])
+# dataList = [{'a': 1}, {'b': 3}, {'c': 5}]
+# for index in range(len(dataList)):
+#     for key in dataList[index]:
+#         print(dataList[index][key])
 
-for i in range(len(dataList)):
-    ind_dict = dataList[i]
-    for poop in ind_dict:
-        value = ind_dict[poop]
-        print(f"KEY: {poop}  VALUE: {value}")
+# for i in range(len(dataList)):
+#     ind_dict = dataList[i]
+#     for poop in ind_dict:
+#         value = ind_dict[poop]
+#         print(f"KEY: {poop}  VALUE: {value}")
+
+def get_grade(s1, s2, s3):
+    avg = (s1+s2+s3)/3
+    if avg >= 90:
+        return 'A'
+    elif avg >= 80:
+        return 'B'
+    elif avg >= 70:
+        return 'C'
+    elif avg >= 60:
+        return 'D'
+    else:
+        return 'F'
+
+print(get_grade(40,51,52))
 
 
 
